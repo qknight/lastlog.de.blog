@@ -9,11 +9,6 @@ for some time now there is support for 'armv7l' in nixos. in this posting i show
 
 [[!img media/odroid-xu4.jpg size=300x alt="" caption="Odroid XU4, picture form Hardkernel" align=center]]
 
-<table class="img align-center"><caption>Odroid XU4, picture form Hardkernel</caption><tr><td><a href="media/odroid-xu4.jpg"><img src="media/odroid-xu4.jpg"
-width="300" height="260" alt="" class="img" /></a></td></tr></table>
-
-
-
 * Samsung Exynos5422 Cortex™-A15 2Ghz and Cortex™-A7 Octa core CPUs
 * Mali-T628 MP6(OpenGL ES 3.0/2.0/1.1 and OpenCL 1.1 Full profile)
 * 2Gbyte LPDDR3 RAM PoP stacked
@@ -235,7 +230,8 @@ this will copy the u-boot from the sd-card into the eMMC. afterwards poweroff an
 ### xu4 boot messages
 
 
-<pre>
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ {.bash}
 U-Boot 2016.01-rc1 (Dec 02 2015 - 04:40:51 +0000) for ODROID-XU3
 
 CPU:   Exynos5422 @ 800 MHz
@@ -426,8 +422,7 @@ See "systemctl status firewall.service" for details.
 
 
 <<< Welcome to NixOS 15.09.git.ba8f33fM (armv7l) - ttySAC2 >>>
-
-</pre>
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ## sd-card images
 

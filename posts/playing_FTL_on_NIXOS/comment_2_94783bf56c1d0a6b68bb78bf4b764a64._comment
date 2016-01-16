@@ -1,0 +1,7 @@
+[[!comment format=mdwn
+ username="Luca"
+ subject="Another alternative"
+ date="2015-05-08T23:24:50Z"
+ content="""
+Another way is to use the FHSUserEnv functions in nixpkgs to run the game in a lighweight chroot with user container and an FHS filesystem structure suitable for running such programs. That's still a .nix and you don't have to mess with LD_LIBRARY_PATH or RPATH.
+"""]]

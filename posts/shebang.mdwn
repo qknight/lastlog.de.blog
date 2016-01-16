@@ -1,0 +1,27 @@
+[[!meta date="2015-05-03 18:58"]]
+[[!tag nixos shell usability nixos python]]
+
+[[!img media/nixos-lores.png alt="" align=right]]
+
+# motivation
+nixos is all about **custom environments** and **containing application not interfering with each other**. while this is **'the dream'** for the **ops team** it was still unhandy for **dev teams** until now! recent development(s) are about to kick in, setting usability levels to a degree most developers would enjoy.
+
+in this posting i want to outline some of these recent developments related to development environments.
+
+# custom environments
+but what is a custom environment? in a nutshell: when you open a shell, you got a environment where you can start programs (**find . -name bar**), export variables (**export LD_LIBRARY_PATH=/lib:$LD_LIBRARY_PATH**);
+
+## makeWrapper / RPATH
+## myEnvFun
+## nix-shell
+## using nix as shebang
+
+
+
+# conclusion
+
+# links
+
+* [1] <https://nixos.org/wiki/Python>
+* [2] <https://github.com/madjar/nixbang>
+* [3] <https://github.com/NixOS/nix/commit/a957893b261a4438101c205e38fe8ce62b83a121>

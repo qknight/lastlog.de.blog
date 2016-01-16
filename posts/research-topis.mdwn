@@ -1,0 +1,26 @@
+nix:
+
+- nix-expression evaluation: each single step is a transaction like step which means that; when doing changes to installPhase, do not evaluate buildPhase again, but instead of use cached values
+ - this is already the case for unpackPhase for instance
+
+- serialisierung von nix os systemen oder von nixos services
+
+- virtualisierung des stores
+ - use oldversion+binary delta
+ - fast boot
+
+- leave out dependencies, record the output and store this on a webserver. why? would be good to have this as a database to suggest fixes for yet unpackages software
+
+- p2p
+
+- hydra: create a incentive in QA for upstream with nice logs: 
+ - compile warnings
+ - amount of manual patches (the less, the better)
+ - meta-data stuff
+ - unit tests
+
+- ssh (change session layer from ip:port to a cookie or similar), also resume broken sessions automatically on disconnect or ip change
+
+- tmux remote terminal (so that you can access the server via http://servername/terminal1) but see the same stuff as a user using: screen with screen -X
+
+

@@ -1,0 +1,8 @@
+[[!comment format=mdwn
+ username="https://www.google.com/accounts/o8/id?id=AItOawmySzPuQrgLmFB2Fx2k3gRLyzFAWIe3kTo"
+ nickname="Vladimír"
+ subject="Related: steam"
+ date="2015-04-16T19:00:48Z"
+ content="""
+Related thing: steam on nix(os) had to go a bit different way, as steam itself downloads/updates the game binaries, so there's a chroot created that makes the required libs present on places where they would be in a regular distro. I'm unsure if there's a better reference than [an older blog post](http://sandervanderburg.blogspot.nl/2013/09/composing-fhs-compatible-chroot.html).
+"""]]

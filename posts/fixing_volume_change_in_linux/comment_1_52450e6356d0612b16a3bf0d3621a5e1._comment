@@ -1,0 +1,14 @@
+[[!comment format=mdwn
+ username="https://krandlobjang.wordpress.com/"
+ nickname="krandlobjang"
+ subject="P-variable"
+ date="2015-04-06T10:22:58Z"
+ content="""
+Hello,
+Why in volume.sh you are assigin some values to P variable? 
+
+    P=$(echo \"$Y/30*100\" | bc -l)
+
+It is not used below, or at least I cannot see any usage in your code.
+
+"""]]

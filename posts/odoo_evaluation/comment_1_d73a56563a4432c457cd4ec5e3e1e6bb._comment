@@ -1,0 +1,19 @@
+[[!comment format=mdwn
+ username="Bert.moens@33381332ab8c93f3a0e4738c0c09088c8b31b529"
+ nickname="Bert.moens"
+ subject="consider erp5"
+ date="2015-11-06T14:18:09Z"
+ content="""
+Have you looked into erp5?
+
+I admire the abstractions made and the discipline to stick to design and coding policies.
+Erp5 includes many business templates that can be combined to fit your needs. It is designed to be adapted.
+
+A RESTful interface and automated testing are built-in.
+
+[This paper](https://www.google.be/url?sa=t&source=web&rct=j&url=http://www.ex4ever.info/wp-content/uploads/2013/11/erp5techintro.pdf&ved=0CBsQFjAAahUKEwj1s9bO_fvIAhXIsxQKHRwADNw&usg=AFQjCNFRphjhp7TUaJS2KJaNzBnaN9QBTw&sig2=7OvS9i0JlDowC6E2HYplFQ) is a nice read to learn about the technical background of erp5.
+I 'd love to read your conclusion of your evaluation.
+
+I have no running instance of erp5 and I have no connection to the people behind the project. Just a strong interest and admiration.
+Googling 'nixos odoo' brought me to your nice blog. Odoo seems a lot easier to implement quickly for an upcoming project but erp5 would be nicer. Nix might be the solution.
+"""]]

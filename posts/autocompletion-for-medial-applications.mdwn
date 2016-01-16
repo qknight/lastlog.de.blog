@@ -1,0 +1,34 @@
+[[!meta date="2013-07-15 23:25"]]
+[[!tag usability]]
+
+# using medial data 
+
+what i had seen lately was: the electrocardiography was giving a diagnosis or at least a 'good' recommendation what is going on.
+
+so the doctor used the outcome of the device to create a diagnosis which is then put into the medial record of the subject. in germany doctors have to use ICD-10 [1] - which is basically a lookup table where each diagnosis has an associated uniq id (the ICD code). the wikipedia article [1] mentioes encryption but is not about security at all - what they actually mean is encoding - but thats a different story.
+
+# MD with autocompletion in diagnosis
+
+the ICD encoded data is probably already used for drug research - does it make sense to invest in this drug when there are only 2 affected? - and of course insurance companies. 
+
+but the idea i'm having here is more like giving a MD a tool for diagnosis like autocompletion for java, when using eclipse. 
+
+# workflow
+
+idee: arzt mach anamnese und bekommt blutbild, mit den erfassten daten kann man dann einen parser fuettern, der die daten 
+verwendet und eine interpretation erstellt anhand von vorangegangen diagnosen. 
+- das framework ist open source und attached auf die db des artztes clientseitig (quasi als plugin)
+- das diagnosetool kann lernen, indem es die daten liesst und auch die diagnosen dazu (unter annahme diese waren richtig)
+- die daten vom patienten werden annonymisiert, wenn der artzt das tool verbessern will
+
+MD personal 
+
+# making the database better
+
+
+
+# links
+
+* [1] https://de.wikipedia.org/wiki/Internationale_statistische_Klassifikation_der_Krankheiten_und_verwandter_Gesundheitsprobleme
+* [2] http://www.google.org/flutrends/
+

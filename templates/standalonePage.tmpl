@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="utf-8" />
+<meta content="IE=edge" http-equiv="X-UA-Compatible">
+
+<title>{{.Title}}</title>
+
+<script src="{{.RelativeSrcRootPath}}/js/jquery.min.js"></script>
+<link type="text/css" rel="stylesheet" href="{{.RelativeSrcRootPath}}/css/bootstrap.min.css" />
+<script src="{{.RelativeSrcRootPath}}/js/bootstrap.min.js"></script>
+<link rel="icon" href="{{.RelativeSrcRootPath}}/favicon.ico" type="image/x-icon" />
+<link rel="stylesheet" href="{{.RelativeSrcRootPath}}/css/style.css" type="text/css" />
+<link rel="stylesheet" href="{{.RelativeSrcRootPath}}/css/local.css" type="text/css" />
+
+</head>
+<body>
+
+<!-- menu begins -->
+<div class="container">
+  <nav class="navbar navbar-default" role="navigation">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="{{.SiteURL}}">{{.SiteBrandTitle}}</a>
+    </div>
+      
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="{{.RelativeDstRootPath}}/posts.html">Posts</a></li>
+<!--         <li><a href="{{.RelativeDstRootPath}}/feeds.html">Feeds</a></li> -->
+        <li><a href="{{.RelativeDstRootPath}}/about.html">About</a></li>
+<!--         <li><a href="#">Tags</a></li> -->
+<!--         <li><a href="#">Recent Changes</a></li> -->
+      </ul>
+        
+      <!--
+      <ul class="nav navbar-nav navbar-right">
+          <li><a href="#">Edit</a></li>
+          <li><a href="#">Preferences</a></li>
+      </ul>
+      -->
+
+      <div id="right">
+        <form class="navbar-form navbar-right" role="search">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Search">
+          </div>
+        </form>
+      </div>
+    </div><!-- /.navbar-collapse -->
+  </nav>
+
+  <header class="header">
+  <a href="./posts/tour_of_nix/">tour of nix</a>
+  </header>
+  <div class="article">
+    {{.Body}}
+  </div>
+</div>
+
+</body>
+</html>

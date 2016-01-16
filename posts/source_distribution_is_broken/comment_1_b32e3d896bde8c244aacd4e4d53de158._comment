@@ -1,0 +1,12 @@
+[[!comment format=mdwn
+ username="https://www.google.com/accounts/o8/id?id=AItOawmySzPuQrgLmFB2Fx2k3gRLyzFAWIe3kTo"
+ nickname="Vladimír"
+ subject="comment 1"
+ date="2014-09-13T19:33:58Z"
+ content="""
+#### lua-sockets
+It's typically not hard to find where e.g. Ubuntu, Debian, Arch get sources from. Incidentally, I looked at lua-sockets a few days ago, and IIRC they are taking it from <https://github.com/diegonehab/luasocket/releases>.
+
+#### Source+binary distribution
+It seems to me that you are looking for a huge content-addressable distributed filesystem that contains everything -- source trees for all released versions, nix binary packages. Of course, it would need lots of clever deduplication and other complications. I'm not aware of any project like that.
+"""]]

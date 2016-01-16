@@ -1,0 +1,113 @@
+#about
+this blog is written by **joachim schiele**, email: <js@lastlog.de>
+
+more details on denic:
+
+* <http://www.denic.de/webwhois/index>
+
+# other resources
+
+* <http://blog.lastlog.de> - my blog (you are seeing right now)
+* <https://lastlog.de>
+  my wiki
+* <https://github.com/qknight> - for projects
+
+# license notes
+
+all text is under the terms of the GNU Free Documentation License 1.2 - unless otherwise stated within the document. however, individual articles or elements used in an article might be licensed differently.
+
+please feel free to copy my design. 
+
+# used technologies
+
+this blog is built on the following technologies:
+
+* ikiwiki <http://ikiwiki.info/> from joey hess
+* running on <https://www.branchable.com/> using debian IIRC
+* git <https://en.wikipedia.org/wiki/Git_(software)>
+* tocify.js <http://gregfranko.com/jquery.tocify.js/> create dynamic TOC using javascript
+* self built design inspired by:
+  * the <http://nixos.org> nixos project (thanks to eelco dolstra)
+  * bootstrap theme from tocify.js
+  * TOC, inspired by: 
+     * <http://www.thedailybeast.com/articles> - yet their TOC is still cooler!
+     * <http://www.plosgenetics.org/article/info%3Adoi%2F10.1371%2Fjournal.pgen.1004410> - plosgenetics.org
+  * and many other webpages i don't remember anymore ;P
+
+# links
+
+Mit Urteil vom 12. Mai 1998 hat das Landgericht Hamburg entschieden, dass man durch die Ausbringung eines Links die Inhalte der gelinkten Seite ggf. mit zu verantworten hat. Dies kann, so das LG, nur dadurch verhindert werden, dass man sich ausdrücklich von diesen Inhalten distanziert. Ich distanziere mich speziell von Links in dieser Seite welche wiederum auf diese Seite verweisen *g*. Wir haben auf unseren Seiten Links zu anderen Seiten im Internet gelegt. Für alle diese Links gilt: Der Webmaster von www.lastlog.de erklärt ausdrücklich, dass er keinerlei Einfluss auf die Gestaltung und die Inhalte der gelinkten Seiten hat. Deshalb distanziere ich mich hiermit ausdrücklich von allen Inhalten aller gelinkten Seiten auf meiner Homepage und mache mir diese Inhalte nicht zu Eigen. Diese Erklärung gilt für alle auf meiner Homepage angezeigten Links und für alle Inhalte der Seiten, zu denen die bei mir angemeldeten Banner und Links führen.
+
+# cookies
+
+warning, i might also use cookies (please see <https://en.wikipedia.org/wiki/HTTP_cookie>). cookies are dangerous and in the wrong hands it can lead to diabetes or other serious illnesses, thus, consume with care!
+
+# language advice
+most of my articles are written in english and **since i like to experiment with programming languages it seems to be interesting to experiment with natural languages as well**. 
+
+* **most things are written case insensitive** [comp.], that means: written using small letters
+* **abbrevations with case**, example: HTTP 
+* especially in german where one composes words based on a series of words: it **would make sense to write CamelCase**, example: "stellPlatz", "hochSchule" or "obstGarten" 
+
+# gpg key (js@lastlog.de)
+
+copy this key into a file, say **js@lastlog.de.gpg** then **import it using**:
+
+    gpg --import /tmp/js@lastlog.de.gpg
+
+here is the key:
+
+    -----BEGIN PGP PUBLIC KEY BLOCK-----
+    Version: GnuPG v2
+    
+    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
+    8x2hPiadOys6WA==
+    =jf1/
+    -----END PGP PUBLIC KEY BLOCK-----
+
+

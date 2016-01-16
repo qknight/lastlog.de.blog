@@ -1,0 +1,28 @@
+[[!meta date="2015-01-18 10:58"]]
+[[!tag ]]
+
+[[!img media/nixos-lores.png alt="" align=right]]
+
+# motivation
+der standort 'deutschland' für internetdienste könnte erheblich ausgebaut werden.
+
+# was tun?
+
+provider folgende dinge vorschreiben:
+
+* ipv6 + statisches prefix verpflichten
+* vertragslaufzeit auf max. 3 monate begrenzen (verbraucherschutz!)
+* freie routerwahl vorschreiben
+* provider müssen internetdienste zulassen
+* upload und download bandbreite müssen symmetrisch sein
+* flatrates müssen 'flatrates' sein, ansonsten als 'volumen-vertrag' auszeichnen (ich halte aber nichts von flatrates btw)
+* ssl-zertifikate für .de domains vom denic verteilen lassen, weiter müssen diese SSL-zertifikate wildcard SSL zertifikate sein
+
+# conclusion
+
+# links
+
+* [1] <>
+* [2] <>
+* [3] <>
+* [4] <>

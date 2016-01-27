@@ -22,17 +22,12 @@ please feel free to copy my design.
 
 this blog is built on the following technologies:
 
-* ikiwiki <http://ikiwiki.info/> from joey hess
-* running on <https://www.branchable.com/> using debian IIRC
-* git <https://en.wikipedia.org/wiki/Git_(software)>
-* tocify.js <http://gregfranko.com/jquery.tocify.js/> create dynamic TOC using javascript
-* self built design inspired by:
-  * the <http://nixos.org> nixos project (thanks to eelco dolstra)
-  * bootstrap theme from tocify.js
-  * TOC, inspired by: 
-     * <http://www.thedailybeast.com/articles> - yet their TOC is still cooler!
-     * <http://www.plosgenetics.org/article/info%3Adoi%2F10.1371%2Fjournal.pgen.1004410> - plosgenetics.org
-  * and many other webpages i don't remember anymore ;P
+* meerdoku
+
+  * tocify.js <http://gregfranko.com/jquery.tocify.js/> create dynamic TOC using javascript
+  * anchor.js
+  * bootstrap
+  * pandoc
 
 # links
 

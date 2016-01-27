@@ -1,3 +1,6 @@
+[[!draft]]
+[[!meta date="2014-02-05 14:17"]]
+
 nix:
 
 - nix-expression evaluation: each single step is a transaction like step which means that; when doing changes to installPhase, do not evaluate buildPhase again, but instead of use cached values

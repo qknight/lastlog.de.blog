@@ -1,5 +1,5 @@
 [[!meta date="2014-02-23 13:54"]]
-[[!img media/tinkerforge-logo.jpg align=right]]
+[[!img media/tinkerforge-logo.jpg align="right"]]
 [[!tag raspberrypi tinkerforge linux usability node.js scala lift]]
 
 # motivation

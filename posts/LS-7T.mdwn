@@ -139,6 +139,9 @@ i sold the display to a friend who desperately wanted it. thus i'm glad i got ri
 **why does someone produce a display without proper EDID and DPMS?** 
 
 if you have a usecase similar to mine i would recommend:
-<font color="red">
-DO NOT BUY THIS DISPLAY since it was horrible to setup properly. i wasted 5 hours with the setup. IF YOU DON'T APPLY THE 'xrandr' modeline hack on the odroid u3, then the default resolution of 1280x720 will make you lose parts of the image (~ 18 pixels on the top and another 18 pixels on the bottom).
-</font>
+
+<div class="alert alert-danger" role="alert">
+DO NOT BUY THIS DISPLAY since it was horrible to setup properly. 
+
+i wasted 5 hours with the setup. IF YOU DON'T APPLY THE 'xrandr' modeline hack on the odroid u3, then the default resolution of 1280x720 will make you lose parts of the image (~ 18 pixels on the top and another 18 pixels on the bottom).
+</div>

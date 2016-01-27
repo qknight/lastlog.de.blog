@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 
 <meta charset="utf-8" />
@@ -10,9 +10,18 @@
 <script src="{{.RelativeSrcRootPath}}/js/jquery.min.js"></script>
 <link type="text/css" rel="stylesheet" href="{{.RelativeSrcRootPath}}/css/bootstrap.min.css" />
 <script src="{{.RelativeSrcRootPath}}/js/bootstrap.min.js"></script>
-<link rel="icon" href="{{.RelativeSrcRootPath}}/favicon.ico" type="image/x-icon" />
+<script src="{{.RelativeSrcRootPath}}/js/anchor.min.js"></script>
+<!-- <link rel="icon" href="{{.RelativeSrcRootPath}}/favicon.ico" type="image/x-icon" /> -->
+
 <link rel="stylesheet" href="{{.RelativeSrcRootPath}}/css/style.css" type="text/css" />
-<link rel="stylesheet" href="{{.RelativeSrcRootPath}}/css/local.css" type="text/css" />
+
+<!-- timeline related css begin -->
+<link rel="stylesheet" href="{{.RelativeSrcRootPath}}/css/demo.css" type="text/css" media="screen">
+<link rel="stylesheet" href="{{.RelativeSrcRootPath}}/css/timeliner.css" type="text/css" media="screen">
+<link rel="stylesheet" href="{{.RelativeSrcRootPath}}/css/responsive.css" type="text/css" media="screen">
+<link rel="stylesheet" href="{{.RelativeSrcRootPath}}/css/colorbox.css" type="text/css" media="screen">
+<!-- timeline related css end -->
+
 
 </head>
 <body>
@@ -34,9 +43,9 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><a href="{{.RelativeDstRootPath}}/posts.html">Posts</a></li>
-<!--         <li><a href="{{.RelativeDstRootPath}}/feeds.html">Feeds</a></li> -->
-        <li><a href="{{.RelativeDstRootPath}}/about.html">About</a></li>
+        <li><a href="{{.RelativeSrcRootPath}}/posts.html">Posts</a></li>
+<!--         <li><a href="{{.RelativeSrcRootPath}}/feeds.html">Feeds</a></li> -->
+        <li><a href="{{.RelativeSrcRootPath}}/about.html">About</a></li>
 <!--         <li><a href="#">Tags</a></li> -->
 <!--         <li><a href="#">Recent Changes</a></li> -->
       </ul>
@@ -59,12 +68,45 @@
   </nav>
 
   <header class="header">
-  <a href="./posts/tour_of_nix/">tour of nix</a>
+  <a href="#">{{.Title}}</a>
   </header>
   <div class="article">
     {{.Body}}
   </div>
 </div>
+
+<script language="javascript">
+window.onload = function(e){ 
+  anchors.add('header')
+  anchors.add('h1')
+  anchors.add('h2')
+  anchors.add('h3')
+  anchors.add('h4')
+  anchors.add('h5')
+}
+</script>
+
+<!-- timeline related css begin -->
+<script type="text/javascript" src="js/colorbox.js"></script>
+<script type="text/javascript" src="js/timeliner.js"></script>
+<script>
+  $(document).ready(function() {
+    $.timeliner({
+      //startOpen:['#19550828', '#19630828'],
+    });
+    $.timeliner({
+      timelineContainer: '#timeline-js',
+      timelineSectionMarker: '.milestone',
+      oneOpen: true,
+      startState: 'flat',
+      expandAllText: '+ Show All',
+      collapseAllText: '- Hide All'
+    });
+    // Colorbox Modal
+    $(".CBmodal").colorbox({inline:true, initialWidth:100, maxWidth:682, initialHeight:100, transition:"elastic",speed:750});
+  });
+</script>
+<!-- timeline related css end -->
 
 </body>
 </html>

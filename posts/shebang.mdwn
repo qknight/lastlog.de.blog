@@ -1,5 +1,6 @@
 [[!meta date="2015-05-03 18:58"]]
 [[!tag nixos shell usability nixos python]]
+[[!draft]]
 
 [[!img media/nixos-lores.png alt="" align=right]]
 

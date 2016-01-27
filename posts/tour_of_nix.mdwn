@@ -23,22 +23,28 @@ nix-instantiate is a very good candidate among the various nix-tools. since emsc
 
 1. clone nix/nixpkgs
 
-        git clone https://github.com/nixos/nix
-        git clone https://github.com/nixos/nixpkgs
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ {.bash}
+    git clone https://github.com/nixos/nix
+    git clone https://github.com/nixos/nixpkgs
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
 
     'nix' contains nix-instantiate which we want to compile to javascript while 'nixpkgs' will be bundled with nix-instantiate.js so we can use the lib functions.
 
 2. development environment
 
-   to play with the code, run:
+    to play with the code, run:
 
-        nix-shell --pure -p vim emscripten nodejs autoconf automake pkgconfig perlPackages.DBDSQLite perl perlPackages.WWWCurl  bzip2 zlib libtool bison flex curl sqlite git file
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ {.bash}
+    nix-shell --pure -p vim emscripten nodejs autoconf automake pkgconfig perlPackages.DBDSQLite perl perlPackages.WWWCurl  bzip2 zlib libtool bison flex curl sqlite git file
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
 
-   **note:** we will be using llvm instead of gcc since emscripten is llvm only!
+    **note:** we will be using llvm instead of gcc since emscripten is llvm only!
 
 2. learn about nix-instantiate dependencies
 
-        ./dependencies.sh =nix-instantiate dependencies.jpg
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ {.bash}
+    ./dependencies.sh =nix-instantiate dependencies.jpg
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
     [dependencies.sh](http://domseichter.blogspot.de/2008/02/visualize-dependencies-of-binaries-and.html) lists the dependencies of the vanialla nix-instantiate
 
@@ -61,18 +67,20 @@ nix-instantiate is a very good candidate among the various nix-tools. since emsc
 
 4. the build using './bundle'
 
-        emcc -g0 -O3 nix-instantiate.bc ../libexpr/libnixexpr.bc ../libstore/libnixstore.bc ../boost/format/libnixformat.bc ../libutil/libnixutil.bc ../libmain/libnixmain.bc \
-          -o nix-instantiate.js \
-          --preload-file nix/derivation.nix \
-          --preload-file nixpkgs \
-          --preload-file test.nix \
-          -s NO_EXIT_RUNTIME=1 \ #important
-          -s INVOKE_RUN=0 \ #important
-          -s ALLOW_MEMORY_GROWTH=1 \ # importatnt!
-          -s TOTAL_MEMORY=350777216 \ # could be less i suppose
-          --pre-js pre-js.js \ # important for nix-instantiate (to remove the spinner)
-          -s DISABLE_EXCEPTION_CATCHING=0 \ # important for nix-instantiate (when the expression creates an error)
-          --llvm-lto 3
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ {.bash}
+    emcc -g0 -O3 nix-instantiate.bc ../libexpr/libnixexpr.bc ../libstore/libnixstore.bc ../boost/format/libnixformat.bc ../libutil/libnixutil.bc ../libmain/libnixmain.bc \
+      -o nix-instantiate.js \
+      --preload-file nix/derivation.nix \
+      --preload-file nixpkgs \
+      --preload-file test.nix \
+      -s NO_EXIT_RUNTIME=1 \ #important
+      -s INVOKE_RUN=0 \ #important
+      -s ALLOW_MEMORY_GROWTH=1 \ # importatnt!
+      -s TOTAL_MEMORY=350777216 \ # could be less i suppose
+      --pre-js pre-js.js \ # important for nix-instantiate (to remove the spinner)
+      -s DISABLE_EXCEPTION_CATCHING=0 \ # important for nix-instantiate (when the expression creates an error)
+      --llvm-lto 3
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
 
 5. after you executed ./bundle:
 
@@ -86,45 +94,49 @@ nix-instantiate is a very good candidate among the various nix-tools. since emsc
 
     **index.html includes nix-instantiate.js** and calls it every time we want to evaluate a nix expression
 
-        <script type="text/javascript" charset="utf-8">
-          ...
-          var runNix = function() {
-            var start = new Date().getTime();
-            console.log("running runNix()");
-            document.getElementById('runInfo').innerHTML = "computation in progress";
-            document.getElementById('output').value = "";
-            Module['print'] = function(text) {
-              Module['return'] = text + '\n'; 
-              document.getElementById('output').value += text;
-              document.getElementById('runInfo').innerHTML = "";
-              var end = new Date().getTime();
-              var time = end - start;
-              console.log('Execution time: ' + time + ' ms');
-            };
-            Module['printErr'] = function(text) {
-              text = text.replace("[31;1m", "");
-              text = text.replace("[1m", "");
-              text = text.replace("[1m", "");
-              text = text.replace("[0m","");
-              text = text.replace("[0m","");
-              text = text.replace("/test.nix","line");
-              text = text.replace("/test.nix","line");
-              text = text.replace("/test.nix","line");
-              console.log(text);
-              Module['return'] = text + '\n'; 
-              document.getElementById('runInfo').innerHTML = "";
-              document.getElementById('output').value += text;
-            };
-            var input_text = editor.getValue();
-            FS.writeFile('/test.nix', input_text, {encoding: 'utf8'});
-            Module['arguments'] = ['-I', 'nixpkgs=nixpkgs', '--eval', '--strict', '--show-trace', '/test.nix'];
-            Module.callMain(Module['arguments'])
-          };         
-         </script>
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ {.java}
+    <script type="text/javascript" charset="utf-8">
+      ...
+      var runNix = function() {
+        var start = new Date().getTime();
+        console.log("running runNix()");
+        document.getElementById('runInfo').innerHTML = "computation in progress";
+        document.getElementById('output').value = "";
+        Module['print'] = function(text) {
+          Module['return'] = text + '\n'; 
+          document.getElementById('output').value += text;
+          document.getElementById('runInfo').innerHTML = "";
+          var end = new Date().getTime();
+          var time = end - start;
+          console.log('Execution time: ' + time + ' ms');
+        };
+        Module['printErr'] = function(text) {
+          text = text.replace("[31;1m", "");
+          text = text.replace("[1m", "");
+          text = text.replace("[1m", "");
+          text = text.replace("[0m","");
+          text = text.replace("[0m","");
+          text = text.replace("/test.nix","line");
+          text = text.replace("/test.nix","line");
+          text = text.replace("/test.nix","line");
+          console.log(text);
+          Module['return'] = text + '\n'; 
+          document.getElementById('runInfo').innerHTML = "";
+          document.getElementById('output').value += text;
+        };
+        var input_text = editor.getValue();
+        FS.writeFile('/test.nix', input_text, {encoding: 'utf8'});
+        Module['arguments'] = ['-I', 'nixpkgs=nixpkgs', '--eval', '--strict', '--show-trace', '/test.nix'];
+        Module.callMain(Module['arguments'])
+      };         
+    </script>
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
     this is actually similar to calling nix-instantiate from the shell:
 
-        nix-instantiate -I nixpkgs=nixpkgs/ --eval, --strict, --show-trace, /test.nix    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ {.bash}
+    nix-instantiate -I nixpkgs=nixpkgs/ --eval, --strict, --show-trace, /test.nix    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
     **note:** i want to point out that **callMain** was used over **cwrap** 
 
@@ -132,33 +144,35 @@ nix-instantiate is a very good candidate among the various nix-tools. since emsc
 
      **check your webserver has compression enabled!** 
 
-        services.httpd = {
-          enable = true;
-          logPerVirtualHost = true;
-          adminAddr="js@lastlog.de";
-          hostName = "lastlog.de";
-          extraModules = [
-            { name = "php5"; path = "${pkgs.php}/modules/libphp5.so"; }
-            { name = "deflate"; path = "${pkgs.apacheHttpd}/modules/mod_deflate.so"; }
-          ];
-          virtualHosts = [
-            # nixcloud.io
-            {
-              hostName = "nixcloud.io";
-              serverAliases = [ "nixcloud.io" "www.nixcloud.io" ];
-              documentRoot = "/www/nixcloud.io/";
-              extraConfig = ''
-                 RedirectMatch ^/$ /main/page
-                 <Directory "/www/nixcloud.io/main/">
-                   Options -Indexes
-                   AllowOverride None
-                   Require all granted
-                 </Directory>
-                 SetOutputFilter DEFLATE
-              '';
-            };
-          ]
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ {.haskell}
+    services.httpd = {
+      enable = true;
+      logPerVirtualHost = true;
+      adminAddr="js@lastlog.de";
+      hostName = "lastlog.de";
+      extraModules = [
+        { name = "php5"; path = "${pkgs.php}/modules/libphp5.so"; }
+        { name = "deflate"; path = "${pkgs.apacheHttpd}/modules/mod_deflate.so"; }
+      ];
+      virtualHosts = [
+        # nixcloud.io
+        {
+          hostName = "nixcloud.io";
+          serverAliases = [ "nixcloud.io" "www.nixcloud.io" ];
+          documentRoot = "/www/nixcloud.io/";
+          extraConfig = ''
+              RedirectMatch ^/$ /main/page
+              <Directory "/www/nixcloud.io/main/">
+                Options -Indexes
+                AllowOverride None
+                Require all granted
+              </Directory>
+              SetOutputFilter DEFLATE
+          '';
         };
+      ]
+    };
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
     this is how we at nixcloud set up mod_deflate for apache, which curiously is not a default option. **this reduces the 30mb download to 6mb only!**
 

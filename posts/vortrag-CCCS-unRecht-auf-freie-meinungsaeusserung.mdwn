@@ -1,3 +1,6 @@
+[[!draft]]
+[[!meta date="2014-02-05 14:17"]]
+
 http://video.golem.de/wissenschaft/12092/tauchroboter-u-cat.html
 https://github.com/cryptosphere/cryptosphere
 http://www.heise.de/newsticker/meldung/IETF-denkt-ueber-mehr-Anonymitaet-im-Internet-nach-2058378.html?wt_mc=rss.ho.beitrag.atom

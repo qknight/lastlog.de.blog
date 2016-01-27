@@ -1,5 +1,6 @@
 [[!meta date="2015-12-27 10:58"]]
 [[!tag nixos odroid xu4 u-boot]]
+[[!draft]]
 
 [[!img media/nixos-lores.png alt="" align=right]]
 

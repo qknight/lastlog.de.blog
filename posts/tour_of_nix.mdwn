@@ -2,6 +2,7 @@
 [[!tag javascript html5 emscripten nixcloud nixos]]
 
 [[!img media/Emscripten_logo_full.png size=250x alt="" align=right]]
+[[!summary a tour of nix is an educational purpose project on teaching the Nix programming language. It is also an introduction on how to use LLVM and emscripten to convert C++ programs to run in the browser.]]
 
 # motivation
 lately i've been working with emscripten 1.29.10 and i compiled **nix-instantiate** from **c++ to javascript**. why?

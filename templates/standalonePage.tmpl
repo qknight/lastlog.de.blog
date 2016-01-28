@@ -67,9 +67,15 @@
     </div><!-- /.navbar-collapse -->
   </nav>
 
-  <header class="header">
-  <a href="#">{{.Title}}</a>
-  </header>
+
+
+  <div id="headerContainer">
+    <header class="header">
+    <a href="#">{{.Title}}</a>
+    </header>
+    <div id="headerRight">{{.TitleNAV}} </div>
+  </div>
+
   <div class="article">
     {{.Body}}
   </div>
@@ -77,7 +83,7 @@
 
 <script language="javascript">
 window.onload = function(e){ 
-  anchors.add('header')
+//   anchors.add('header')
   anchors.add('h1')
   anchors.add('h2')
   anchors.add('h3')

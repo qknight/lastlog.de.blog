@@ -1,7 +1,7 @@
 [[!meta date="2015-11-14 22:15"]]
 [[!tag javascript html5 emscripten nixcloud nixos]]
 
-[[!img media/Emscripten_logo_full.png size=250x alt="" align=right]]
+[[!img media/Emscripten_logo_full.png width="250px" alt="" align=right]]
 [[!summary a tour of nix is an educational purpose project on teaching the Nix programming language. It is also an introduction on how to use LLVM and emscripten to convert C++ programs to run in the browser.]]
 
 # motivation
@@ -85,7 +85,7 @@ nix-instantiate is a very good candidate among the various nix-tools. since emsc
 
 5. after you executed ./bundle:
 
-    you can test if everything went find, if it built a new version of:
+    you can test if everything went fine, if it built a new version of:
 
       * nix-instantiate.data
       * nix-instantiate.js

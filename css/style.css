@@ -35,8 +35,8 @@ pre {
 }
 
 .article {
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 25px;
+    padding-right: 25px;
 }
 
 .header a {
@@ -48,13 +48,55 @@ pre {
 
 body {
     background-color: #E8EFF3;
+    background-image: url("../images/bg.jpg");
+    background-size: 100vw;
 }
 
 img {
-    width: auto;
-    height: auto;
+/*     width: auto; */
+/*     height: auto; */
     max-width: 100%;
     vertical-align: middle;
     border: 0;
     -ms-interpolation-mode: bicubic;
+}
+
+#date p {
+  margin-bottom: 0px;
+  margin-top: 25px;
+}
+
+#lastupdated {
+  color: grey;
+}
+
+#tags p {
+  margin-bottom: 0px;
+}
+
+.header {
+  margin-bottom: 0px;  
+}
+
+#headerContainer {
+  position: relative;
+}
+
+#headerRight {
+  position: absolute;
+}
+
+
+
+
+#seriesContainer {
+  position: relative;
+}
+
+#seriesHeader {
+  position: absolute;
+}
+
+header.seriesHeader {
+  background-color: #D7E4ED;
 }

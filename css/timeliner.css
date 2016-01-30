@@ -33,11 +33,11 @@
   padding: 4px 4px 4px 20px;
 }
 .timeline-wrapper h2 span {
-  background: #ccc;
+    background: #67AACC;  
+  color: white;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
-/*   color: #131313; */
   letter-spacing: 0.1em;
   line-height: 1.7em;
   padding: 3px 5px 1px;

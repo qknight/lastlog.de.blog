@@ -3,6 +3,7 @@
 
 [[!tag gentoo linux ogre3d packagemanager technology usability]]
 
+[[!series ogre]]
 
 
 

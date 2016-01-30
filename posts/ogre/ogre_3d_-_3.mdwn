@@ -2,7 +2,7 @@
 [[!tag gentoo linux ogre3d technology usability]]
 [[!img media/linux_tux-svg.png alt="" align=right size=300x caption="why ois did not work on my linux installation"]]
 
-
+[[!series ogre]]
 
 #what is ois? i quote [1]:
 

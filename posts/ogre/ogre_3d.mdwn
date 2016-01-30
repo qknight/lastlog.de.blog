@@ -1,7 +1,7 @@
 [[!trailitems pages="posts/ogre/*"]]
 [[!meta date="2010-02-09 16:02"]]
 [[!tag gentoo linux ogre3d technology usability]]
-
+[[!series ogre]]
 
 [[!img media/ogrelogo-small.jpg alt="" align=right size=400x]]
 

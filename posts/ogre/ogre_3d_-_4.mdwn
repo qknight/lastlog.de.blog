@@ -1,6 +1,6 @@
 [[!meta date="2010-03-16 23:24"]]
 [[!tag cmake gentoo linux ogre3d packagemanager technology usability]]
-
+[[!series ogre]]
 
 # more orgre updates - comments on ogre examples
 

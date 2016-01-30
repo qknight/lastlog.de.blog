@@ -1,4 +1,11 @@
 /* ============ TIMELINER.JS ============= */
+
+.postingsEntry {
+  background-color: #ECECEC;
+  height: 200px;
+  border-left: 6px solid #67AACC;
+}
+
 .timeline-container {
   border-left: 2px solid #ccc;
   width: 97%;
@@ -48,7 +55,7 @@
   margin: 0 12px 0 0;
   padding: 4px 4px 4px 0;
   position: relative;
-  width: 880px;
+/*   width: 880px; */
 }
 .timeline-series dt {
   background: url(../images/timeline_decade_tick.gif) left center no-repeat;
@@ -94,7 +101,7 @@
   float: left;
   line-height: 1.5em;
   margin: 6px 0 10px;
-  width: 500px;
+/*   width: 500px; */
 }
 .timeline-event-content h4 {
   clear: left;

@@ -35,6 +35,7 @@ pre {
 }
 
 .article {
+    padding-top: 15px;
     padding-left: 25px;
     padding-right: 25px;
 }
@@ -84,19 +85,61 @@ img {
 
 #headerRight {
   position: absolute;
+  top: 4px;
+  right: 0px;
 }
+
+.glyphiconLink {
+font-size: 30px;
+    color: white;
+}
+
 
 
 
 
 #seriesContainer {
   position: relative;
+  background-color: #D7E4ED;
+  height: 30px;
 }
 
 #seriesHeader {
   position: absolute;
+  top: 4px;
+  right: 0px;
 }
 
 header.seriesHeader {
-  background-color: #D7E4ED;
+}
+
+.glyphiconLinkSeries {
+  font-size: 30px;
+  color: white;
+}
+
+.seriesLeft {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+
+.seriesMiddle {
+  position: absolute;
+  top: 0px;
+}
+
+.seriesRight {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+}
+
+.glyphicon:hover {
+  text-shadow: 1px 0px 20px #DDEBFF;
+  transition: all 0.3s ease-in;
+  -webkit-transition: all 0.3s ease-in;
+  -moz-transition: all 0.3s ease-in;
+  -o-transition: all 0.3s ease-in;
+  text-decoration: none;
 }

@@ -1,4 +1,10 @@
-this blog is written by **joachim schiele**, email: <js@lastlog.de>
+## contact
+
+this blog is hosted by **joachim schiele**, 
+
+* email: <js@lastlog.de>
+* jabber: <josh@jabber.ccc.de>
+  
 
 more details on denic:
 
@@ -6,10 +12,10 @@ more details on denic:
 
 ## resources
 
-* <http://blog.lastlog.de> - my blog (you are seeing right now)
-* <https://lastlog.de>
-  my wiki
-* <https://github.com/qknight> - for projects
+* <https://lastlog.de/blog> - my blog
+* <https://lastlog.de/wiki> - my wiki
+* <https://github.com/qknight> - for personal projects
+* <https://github.com/nixcloud> - nixcloud related projects
 
 ## used technologies
 
@@ -17,12 +23,15 @@ this **blog** is built using:
 
 * meerk
 
-    * bootstrap
+    * [go](https://golang.org/)
+    * [pandoc](http://pandoc.org/)
+    * [bootstrap 3](http://getbootstrap.com/)
     * [tocify.js](http://gregfranko.com/jquery.tocify.js/)
-    * anchor.js
-    * timeliner.js
-
-* pandoc
+    * [anchor.js](http://bryanbraun.github.io/anchorjs/)
+    * [timeliner.js](https://technotarek.com/timeliner/)
+    * [rsync](https://wiki.archlinux.org/index.php/rsync)
+    * [git](https://git-scm.com/)
+    * [nixcloud](https://nixcloud.io)
 
 # legal
 
@@ -46,11 +55,11 @@ most of my articles are written in english and **since i like to experiment with
 * **abbrevations with case**, example: HTTP 
 * especially in german where one composes words based on a series of words: it **would make sense to write CamelCase**, example: "stellPlatz", "hochSchule" or "obstGarten" 
 
-## gpg key (js@lastlog.de)
+## gpg key (js_add_lastlog.de)
 
-copy this key into a file, say **js@lastlog.de.gpg** then **import it using**:
+copy this key into a file, say **/tmp/js_add_lastlog.de.gpg** then **import it using**:
 
-    gpg --import /tmp/js@lastlog.de.gpg
+    gpg --import /tmp/js_add_lastlog.de.gpg
 
 here is the key:
 

@@ -139,3 +139,15 @@ header.seriesHeader {
   -o-transition: all 0.3s ease-in;
   text-decoration: none;
 }
+
+.tagbtn {
+  padding-right: 2px;
+  padding-left: 2px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  border-top-width: 0px;
+  border-bottom-width: 0px;
+  margin-left: 1px;
+  margin-right: 1px;
+  border-color: rgba(0, 128, 0, 0);
+}

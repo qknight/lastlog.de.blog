@@ -6,11 +6,10 @@
 /* The Table of Contents container element */
 
 .tocify {
-    top: 20%;
+    top: 130px;
     position: fixed;
-    left: 10px;
-    width: 20%;
-    min-width: 20%;
+    left: 30px;
+    width: 600px;
     max-height: 90%;
     overflow: auto;
     position: fixed;
@@ -18,6 +17,8 @@
     webkit-border-radius: 6px;
     moz-border-radius: 6px;
     border-radius: 6px;
+    background-color: white;
+    z-index: 1;
 }
 
 @media only screen and (max-width: 1200px) {
@@ -30,7 +31,7 @@
 .tocify ul, .tocify li {
     list-style: none;
     margin: 0;
-    #padding: 0;
+    padding: 0;
     border: none;
     line-height: 30px;
 }
@@ -69,4 +70,8 @@
 /* Twitter Bootstrap Override Style */
 .nav-list > li > a {
     padding: 5px;
+}
+
+.nav-list > .active > a, .nav-list > .active > a:hover, .nav-list > .active > a:focus {
+  background-color: #C6DAE4;
 }

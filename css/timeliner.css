@@ -1,11 +1,5 @@
 /* ============ TIMELINER.JS ============= */
 
-.postingsEntry {
-  background-color: #ECECEC;
-  height: 200px;
-  border-left: 6px solid #67AACC;
-}
-
 .timeline-container {
   border-left: 2px solid #ccc;
   width: 97%;
@@ -13,11 +7,9 @@
   margin-left: 20px;
 }
 .timeline-toggle {
-  border-color: #161616;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
-/*   color: #ccc; */
   cursor: pointer;
   float: right;
   font-size: 12px;
@@ -100,8 +92,8 @@
   clear: left;
   float: left;
   line-height: 1.5em;
-  margin: 6px 0 10px;
-/*   width: 500px; */
+/*   margin: 6px 0 10px; */
+  margin-bottom: 0px;
 }
 .timeline-event-content h4 {
   clear: left;
@@ -152,4 +144,5 @@
 
 .tag {
   padding-bottom: 30px; 
+  padding-top: 3px;
 }

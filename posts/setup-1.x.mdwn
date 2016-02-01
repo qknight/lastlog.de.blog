@@ -1,14 +1,14 @@
 [[!meta date="2015-05-23 10:58"]]
 [[!tag bios pci hardware usability]]
 
-[[!img media/hwtools.net-eGPU-BOX1.jpg alt="http://www.hwtools.net/Adapter/PE4H.html" size=200x align=right]]
+[[!img media/hwtools.net-eGPU-BOX1.jpg  alt="http://www.hwtools.net/Adapter/PE4H.html" width="200px" align=right]]
 
 # motivation
 extending a lenovo t530 with an external GPU via the mini pcie adapter slot for gaming and interesting setups.
 
 we were testing both laptop adapters: EC2C (in the thinkpad)and PM3N (in a different laptop) and both were working. 
 
-[[!img media/tumblr_nojghium2G1tqypxno1_1280.jpg alt="eGPU made @ shackspace.de" size=300x]]
+[[!img media/tumblr_nojghium2G1tqypxno1_1280.jpg alt="eGPU made @ shackspace.de" width="300px"]]
 
 # approach
 

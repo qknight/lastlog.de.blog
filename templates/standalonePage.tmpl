@@ -8,23 +8,73 @@
 <title>{{.Title}}</title>
 
 <script src="{{.RelativeSrcRootPath}}/js/jquery.min.js"></script>
+{{if .Tocify}}
+<script src="{{.RelativeSrcRootPath}}/js/jquery-ui-1.9.1.custom.min.js"></script>
+<script src="{{.RelativeSrcRootPath}}/js/jquery.tocify.js"></script>
+<link type="text/css" rel="stylesheet" href="{{.RelativeSrcRootPath}}/css/jquery.tocify.css" />
+{{end}}
 <link type="text/css" rel="stylesheet" href="{{.RelativeSrcRootPath}}/css/bootstrap.min.css" />
 <script src="{{.RelativeSrcRootPath}}/js/bootstrap.min.js"></script>
+{{if .Anchorjs}}
 <script src="{{.RelativeSrcRootPath}}/js/anchor.min.js"></script>
-<!-- <link rel="icon" href="{{.RelativeSrcRootPath}}/favicon.ico" type="image/x-icon" /> -->
+{{end}}
+<link rel="icon" href="{{.RelativeSrcRootPath}}/images/favicon.ico" type="image/x-icon" />
 
 <link rel="stylesheet" href="{{.RelativeSrcRootPath}}/css/style.css" type="text/css" />
 
+{{if .Timeline}}
 <!-- timeline related css begin -->
-<link rel="stylesheet" href="{{.RelativeSrcRootPath}}/css/demo.css" type="text/css" media="screen">
 <link rel="stylesheet" href="{{.RelativeSrcRootPath}}/css/timeliner.css" type="text/css" media="screen">
 <link rel="stylesheet" href="{{.RelativeSrcRootPath}}/css/responsive.css" type="text/css" media="screen">
 <link rel="stylesheet" href="{{.RelativeSrcRootPath}}/css/colorbox.css" type="text/css" media="screen">
 <!-- timeline related css end -->
+{{end}}
 
+ <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; background-color: #dddddd; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { font-weight: bold; } /* Keyword */
+code > span.dt { color: #800000; } /* DataType */
+code > span.dv { color: #0000ff; } /* DecVal */
+code > span.bn { color: #0000ff; } /* BaseN */
+code > span.fl { color: #800080; } /* Float */
+code > span.ch { color: #ff00ff; } /* Char */
+code > span.st { color: #dd0000; } /* String */
+code > span.co { color: #808080; font-style: italic; } /* Comment */
+code > span.al { color: #00ff00; font-weight: bold; } /* Alert */
+code > span.fu { color: #000080; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #ff0000; font-weight: bold; } /* Warning */
+code > span.cn { color: #000000; } /* Constant */
+code > span.sc { color: #ff00ff; } /* SpecialChar */
+code > span.vs { color: #dd0000; } /* VerbatimString */
+code > span.ss { color: #dd0000; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { } /* Variable */
+code > span.cf { } /* ControlFlow */
+code > span.op { } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { font-weight: bold; } /* Preprocessor */
+code > span.at { } /* Attribute */
+code > span.do { color: #808080; font-style: italic; } /* Documentation */
+code > span.an { color: #808080; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #808080; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #808080; font-weight: bold; font-style: italic; } /* Information */
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
 
 </head>
 <body>
+
+<div id="toc"></div>
 
 <!-- menu begins -->
 <div class="container">
@@ -82,7 +132,7 @@
     {{.Body}}
   </div>
 </div>
-
+{{if .Anchorjs}}
 <script language="javascript">
 window.onload = function(e){ 
   anchors.add('h1')
@@ -92,11 +142,12 @@ window.onload = function(e){
   anchors.add('h5')
 }
 </script>
-
+{{end}}
+{{if .Timeline}}
 <!-- timeline related css begin -->
 <script type="text/javascript" src="js/colorbox.js"></script>
 <script type="text/javascript" src="js/timeliner.js"></script>
-<script>
+<script language="javascript">
   $(document).ready(function() {
     $.timeliner({
       //startOpen:['#19550828', '#19630828'],
@@ -114,6 +165,16 @@ window.onload = function(e){
   });
 </script>
 <!-- timeline related css end -->
+{{end}}
+
+{{if .Tocify}}
+<script language="javascript">
+$(document).ready(function() {
+  //Calls the tocify method on your HTML div.
+  $("#toc").tocify();
+});
+</script>       
+{{end}}
 
 </body>
 </html>

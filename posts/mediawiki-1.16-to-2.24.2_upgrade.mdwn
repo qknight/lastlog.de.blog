@@ -1,7 +1,7 @@
 [[!meta date="2015-05-16 03:58"]]
 [[!tag php usability]]
 
-[[!img media/php.jpg alt="" align=right]]
+[[!img media/php.jpg class="noFancy" align="right" width="150px"]]
 
 # mediawiki, php
 today my wiki at [1] went south because the 1.16 version didn't work with the very recent PCRE library used in php.
@@ -12,7 +12,6 @@ the error was something like:
 
 so as i'm on nixos, let's see what pcre version is used by php:
 
-    $ nix-shell -p php                                                                                                                                    :(
     $ nix-store -qR `which php`
     /nix/store/5hkwn27l77b7c37z7812acdf4p9ldr6m-linux-headers-3.12.32
     /nix/store/c2zjp7bqmp5wvpkrpl7p7sfhxbdyfryy-glibc-2.21

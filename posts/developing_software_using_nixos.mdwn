@@ -6,7 +6,7 @@
 #motivation
 i've just finished a wiki page on how to **develop arbitrary software on nixos** [1] (thanks to viric!).  as this is fundamentally different to all other linux and non linux operating systems i think this is worth a posting about this subject in my blog.
 
-the** interesting aspect** is that **nix**/nixos **provides** such **a development environment per project** so one is not forced to pollute the system environment with the ongoing changes which always lead to **horrible side effects as regression** (you know **when old habits stop working** as a tiny update of libX breaks tool Z).
+the **interesting aspect** is that **nix**/nixos **provides** such **a development environment per project** so one is not forced to pollute the system environment with the ongoing changes which always lead to **horrible side effects as regression** (you know **when old habits stop working** as a tiny update of libX breaks tool Z).
 
 the way it is used is covered by [1] already.
 
@@ -39,7 +39,7 @@ the way it is used is covered by [1] already.
 
 in the ~/.nixpkgs/config.nix expression i added a custom library which is then available with nix-env, this way it can be installed using (**nix-env -i libnoise**).
 
-the** interesting point is that line 2** contains the **rec keyword** indicating that **all 3 attributes in the attribute set (line 2 to 18) may recursively reference each other**. this is **required** as the the **srmgEnv** on line 14 where the **buildInputs** lists **libnoise**.
+the **interesting point is that line 2** contains the **rec keyword** indicating that **all 3 attributes in the attribute set (line 2 to 18) may recursively reference each other**. this is **required** as the the **srmgEnv** on line 14 where the **buildInputs** lists **libnoise**.
 
 the **libnoise expression** is outsourced (line 10) into the **file libnoise.nix** (listed below).
 
@@ -90,7 +90,7 @@ once the srmg-env is installed (**nix-env -i env-srmg**) it can be used using: *
 
 as i noted in [1] nix will soon get a toggle (**nix-build --run-env '<nixpkgs>' -A xterm, see [2]**) which will clone the environment of virtually any **sourceScription** on the system. this means one can hack on any software easily by injecting code into the build chain on an arbitrary position - still, this changes won't be persistent, meaning:
 
-  * after **reinstallation** of the sourceScription the** former version will be installed**
+  * after **reinstallation** of the sourceScription the **former version will be installed**
   * the **environment** will **not last a reboot** of the system (not 100% sure about this)
 
 still it is one step towards the concept of the midstream platform (mentioned in my diploma thesis) and is a great way to test a quick hack.

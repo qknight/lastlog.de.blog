@@ -3,6 +3,9 @@
 }
 
 pre {
+-webkit-box-shadow: 0px 0px 16px 0px rgba(50, 50, 50, 0.4);
+-moz-box-shadow:    0px 0px 16px 0px rgba(50, 50, 50, 0.4);
+box-shadow:         0px 0px 16px 0px rgba(50, 50, 50, 0.4);
     background-color: #e8f0f8;
     color: #182F3A;
     border:1px dashed;
@@ -21,6 +24,8 @@ pre {
     padding-bottom: 15px;
     padding-left: 0px;
     padding-right: 0px;
+    z-index: 2;
+    position: relative;
 }
 
 .header {
@@ -47,19 +52,31 @@ pre {
     text-transform: uppercase;
 }
 
+html {
+  overflow-y: scroll;
+  position: relative;
+}
+
 body {
     background-color: #E8EFF3;
-    background-image: url("../images/bg.jpg");
+/*     background-image: url("../images/bg.jpg"); */
     background-size: 100vw;
+    position: inherit;
 }
 
 img {
-/*     width: auto; */
-/*     height: auto; */
     max-width: 100%;
     vertical-align: middle;
     border: 0;
     -ms-interpolation-mode: bicubic;
+    margin-bottom: 10px;
+    box-shadow: 1px 3px 15px 1px rgba(85,85,85,0.45);
+    border-radius: 6px;
+}
+
+.noFancy {
+    box-shadow: none;
+    border-radius: 0px;
 }
 
 #date p {
@@ -87,11 +104,6 @@ img {
   position: absolute;
   top: 4px;
   right: 0px;
-}
-
-.glyphiconLink {
-font-size: 30px;
-    color: white;
 }
 
 #seriesContainer {
@@ -131,13 +143,23 @@ header.seriesHeader {
   right: 4px;
 }
 
-.glyphicon:hover {
+.glyphiconLink:hover {
   text-shadow: 1px 0px 20px #DDEBFF;
   transition: all 0.3s ease-in;
   -webkit-transition: all 0.3s ease-in;
   -moz-transition: all 0.3s ease-in;
   -o-transition: all 0.3s ease-in;
   text-decoration: none;
+}
+
+.glyphiconLinkDisabled {
+  font-size: 30px;
+  color: grey; 
+}
+
+.glyphiconLink {
+  font-size: 30px;
+  color: white;
 }
 
 .tagbtn {
@@ -151,3 +173,4 @@ header.seriesHeader {
   margin-right: 1px;
   border-color: rgba(0, 128, 0, 0);
 }
+

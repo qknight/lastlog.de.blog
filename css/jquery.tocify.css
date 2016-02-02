@@ -9,7 +9,7 @@
     top: 130px;
     position: fixed;
     left: 30px;
-    width: 600px;
+    min-width: 300px;
     max-height: 90%;
     overflow: auto;
     position: fixed;
@@ -73,5 +73,5 @@
 }
 
 .nav-list > .active > a, .nav-list > .active > a:hover, .nav-list > .active > a:focus {
-  background-color: #C6DAE4;
+  background-color: #D0E4EF;
 }

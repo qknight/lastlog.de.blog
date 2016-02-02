@@ -107,14 +107,14 @@ code > span.in { color: #808080; font-weight: bold; font-style: italic; } /* Inf
       </ul>
       -->
 
-      <div id="right">
+      <!--<div id="right">
         <form class="navbar-form navbar-right" role="search">
           <div class="form-group">
             <input type="text" class="form-control" placeholder="Search">
           </div>
         </form>
       </div>
-    </div><!-- /.navbar-collapse -->
+    </div>--><!-- /.navbar-collapse -->
   </nav>
 
 
@@ -132,6 +132,16 @@ code > span.in { color: #808080; font-weight: bold; font-style: italic; } /* Inf
     {{.Body}}
   </div>
 </div>
+<div id="scrollUp">
+<span id="scrollUpBtn" class="glyphiconLink glyphicon glyphicon-chevron-up" aria-hidden="true" title="scroll up"></span>
+</div>
+<script language="javascript">
+$("#scrollUpBtn").click(function() {
+  $("html, body").animate({ scrollTop: 0 }, "slow");
+  return false;
+});
+</script>
+
 {{if .Anchorjs}}
 <script language="javascript">
 window.onload = function(e){ 
@@ -144,7 +154,7 @@ window.onload = function(e){
 </script>
 {{end}}
 {{if .Timeline}}
-<!-- timeline related css begin -->
+<!-- timeline related js begin -->
 <script type="text/javascript" src="js/colorbox.js"></script>
 <script type="text/javascript" src="js/timeliner.js"></script>
 <script language="javascript">
@@ -164,7 +174,7 @@ window.onload = function(e){
     $(".CBmodal").colorbox({inline:true, initialWidth:100, maxWidth:682, initialHeight:100, transition:"elastic",speed:10});
   });
 </script>
-<!-- timeline related css end -->
+<!-- timeline related js end -->
 {{end}}
 
 {{if .Tocify}}
@@ -172,6 +182,11 @@ window.onload = function(e){
 $(document).ready(function() {
   //Calls the tocify method on your HTML div.
   $("#toc").tocify();
+});
+$("#toc").hover(function() { 
+  $("#toc").css("z-index", "111")  
+}, function() { 
+  $("#toc").css("z-index", "1")  
 });
 </script>       
 {{end}}

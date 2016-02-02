@@ -92,9 +92,8 @@
   clear: left;
   float: left;
   line-height: 1.5em;
-/*   margin: 6px 0 10px; */
-  margin-bottom: 0px;
 }
+
 .timeline-event-content h4 {
   clear: left;
   float: left;
@@ -145,4 +144,15 @@
 .tag {
   padding-bottom: 30px; 
   padding-top: 3px;
+}
+
+.summary {
+  background-color: #D0E4EF;
+  margin: 4px;
+  padding: 4px;
+  padding-left: 10px;
+  padding-right: 10px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
 }

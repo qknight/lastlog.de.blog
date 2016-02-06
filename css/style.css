@@ -3,12 +3,12 @@
 }
 
 pre {
--webkit-box-shadow: 0px 0px 16px 0px rgba(50, 50, 50, 0.4);
--moz-box-shadow:    0px 0px 16px 0px rgba(50, 50, 50, 0.4);
-box-shadow:         0px 0px 16px 0px rgba(50, 50, 50, 0.4);
+-webkit-box-shadow: 0px 0px 6px 0px rgba(50, 50, 50, 0.2);
+-moz-box-shadow:    0px 0px 6px 0px rgba(50, 50, 50, 0.2);
+box-shadow:         0px 0px 6px 0px rgba(50, 50, 50, 0.2);
     background-color: #e8f0f8;
     color: #182F3A;
-    border:1px dashed;
+/*     border:1px dashed; */
     border-radius: 6px;
     margin: 5px;
     margin-bottom: 10px;
@@ -154,11 +154,13 @@ header.seriesHeader {
 .glyphiconLinkDisabled {
   font-size: 30px;
   color: grey; 
+  top: 5px;
 }
 
 .glyphiconLink {
   font-size: 30px;
   color: white;
+  top: 5px;
 }
 
 .tagbtn {

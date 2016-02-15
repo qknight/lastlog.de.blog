@@ -1,0 +1,45 @@
+[[!meta date="2014-01-18 13:37"]]
+[[!tag usability shell]]
+[[!draft]]
+# new idea how to use shell utils in a different way
+
+# everyone knows grep
+
+    # grep 'tag.*]]' *
+    system_services_on_nixos.mdwn:[[!tag linux packagemanager security technology usability]]
+    tcp.mdwn:[[!tag linux p2p society tcp technology usability]]
+    the_cloud.mdwn:[[!tag packagemanager security society technology usability virtualization]]
+    the_future_of_the_internet.mdwn:[[!tag society technology usability]]
+    tinkerforge_relais_rapspberry_pi.mdwn:[[!tag draft]]
+    tinkerforge_relais_rapspberry_pi.mdwn:[[!tagfoo raspberrypi linux usability]]
+    ubuntu_cachefs_experiments.mdwn:[[!tag linux]]
+    uninterruptible_power_supply_suspend2ramsuspend2disk.mdwn:[[!tag gentoo linux technology usability]]
+    updating_to_kde_4.4.2_from_kde_4.3.3.mdwn:[[!tag linux gentoo packagemanager usability]]
+    virtualbox_extends_my_host_system_with_several_computers_on_the_same_network.mdwn:[[!tag gentoo packagemanager]]
+    virtualization.mdwn:[[!tag linux technology]]
+    wireless_lan_security.mdwn:[[!tag linux society technology]]
+
+this is basically a list of filenames and the lines where grep found a match without showing the line numbers and in my case, since i was using --color=true, i see matches in red, which is pretty useful.
+
+i also should mention the tool **ack-grep** from <http://beyondgrep.com/> btw.
+
+# anyway, the new idea
+
+but it would be cool to be able to do this:
+
+    # grep foo * -R | vim
+
+then in vim you also see the listing from above, maybe also including the highlighting, but imagine you just could start editing everything!
+
+* this way you could rename files by changing the first part or 
+* the grep result lines of the pattern matching by editing the lines after the colon
+
+this would be so helpful, when renaming multiple headers filenames or other patterns, using vim's regular expressions.
+
+too bad, there is no real progress in shell development as for example seen in powershell.
+
+# summary
+
+we need to change shell tools totally! **leave the stdin/stdout text-stream based approach behind, and replace it by a stdin/stdout object-stream based approach**.
+this would of course require that the shell would hand over filenames and matching positions to vim, much like grep would then produce XML objects like the microsoft powershell is somehow able to.
+

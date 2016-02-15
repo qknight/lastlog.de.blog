@@ -57,8 +57,7 @@ however, **Bjørn Forsman** made a very cool hack:
     }
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-this is just **amazing**! 
-
+this is just **amazing**!
 
 <div class="alert alert-info" role="alert">
 this is similar on [how linus torvalds repaired the broken flash plugin][linusrepair].

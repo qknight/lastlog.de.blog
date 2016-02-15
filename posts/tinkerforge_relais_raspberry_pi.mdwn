@@ -1,13 +1,14 @@
 [[!meta date="2014-02-23 13:54"]]
 [[!img media/tinkerforge-logo.jpg align="right"]]
 [[!tag raspberrypi tinkerforge linux usability node.js scala lift]]
+[[!series illuminator]]
 
 # motivation
 **i love ambient illumination so i installed about 10 different LED systems into my room. the downside is that controlling that many devices manually, which also includes two TFT monitors and my stereo.** this post documents the various software designs i tried until i ended up with a node.js installation on a raspberry pi (PI for short) which is no used several times a day to control my devices' power states.
 
 
-<font color="red"><hr>
 
+<div class="alert alert-danger" role="alert">
 WARNING - DISCLAIMER: 
 
 i'm no expert in electrical engineering - so if you copy this work, ask an expert to check on your setup before making daily use. especially check these things: ***
@@ -23,8 +24,7 @@ i'm no expert in electrical engineering - so if you copy this work, ask an exper
 in fact, i've chosen tinkerforge dual relais bricklets over a self-built relais to avoid making critical errors which could result in your house burned to the ground or lives put to danger. 
 
 I'M NOT RESPONSIBLE IF YOUR DEVICE KILLS YOUR CAT OR BURNS DOWN YOUR HOUSE - YOU HAVE TO KNOW WHAT YOU ARE DOING!
-<hr>
-</font>
+</div>
 
 
 prior to this self-made solution i was considering remote controlled electrical switches. 
@@ -123,7 +123,9 @@ so i came up with a new solution: i added a raspberry pi to the stack:
       |D- multi touch bricklet
        |- 3x4 key pad
 
-**note:** at tinkerforge they are currently designing the '**red brick**' <http://www.tinkerforge.com/en/blog/2014/2/21/tinkerforge-goes-stand-alone-aka-red-brick>. i'm really looking forward to having one!
+<div class="alert alert-info" role="alert">
+at tinkerforge they are currently designing the '**red brick**' <http://www.tinkerforge.com/en/blog/2014/2/21/tinkerforge-goes-stand-alone-aka-red-brick>. i'm really looking forward to having one!
+</div>
  
 
 ## power usage
@@ -131,8 +133,9 @@ so i came up with a new solution: i added a raspberry pi to the stack:
  * 1,8W = (230V to usb converter) + raspberry pi + tinkerforge master brick
  * additionally: 0,4W per triggered relais, that is: 6 x 0,4 = 2,4W additional load (peak)
 
-**note:** tinkerforge 'master brick' and 'WLAN extension' weren't measureable so the 1,8W are caused soly by the raspberry pi ;-)
-
+<div class="alert alert-info" role="alert">
+tinkerforge 'master brick' and 'WLAN extension' weren't measureable so the 1,8W are caused soly by the raspberry pi ;-)
+</div>
 
 # software
 

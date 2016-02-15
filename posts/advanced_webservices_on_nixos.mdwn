@@ -3,6 +3,7 @@
 [[!img media/nixos-lores.png alt="" align=right]]
 
 [[!tag nixos linux technology usability]]
+[[!series webservices]]
 
 # motivation
 i've been using nixos on my webserver for two years now and i love the declarative approach [1] of describing services as well as webservices! describing a webservices in a declarative way is like using the object factory programming pattern and helps to make better abstractions. a good example is the mediawiki abstraction shown below. a user only has to fill the values into the declarative description and nixos-rebuild will automatically install apache-2.2.25, mysql-5.1.72, php-5.4.20 and of course the mediawiki sources (versions of course might differ).

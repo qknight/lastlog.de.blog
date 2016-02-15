@@ -3,6 +3,7 @@
 [[!img media/nixos-lores.png alt="" align=right]]
 
 [[!tag nixos linux technology usability containerization webservice]]
+[[!series webservices]]
 
 # motivation
 

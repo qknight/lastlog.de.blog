@@ -1,6 +1,7 @@
 [[!meta date="2014-12-10 03:01"]]
 [[!img media/tinkerforge-logo.jpg align=right]]
 [[!tag raspberrypi tinkerforge linux usability node.js]]
+[[!series illuminator]]
 
 # motivation
 i've upgraded my illuminator installation, see previous post: <http://blog.lastlog.de/posts/tinkerforge_relais_rapspberry_pi/index.html>. in short that is:

@@ -1,7 +1,7 @@
 [[!meta date="2013-02-26 08:58"]]
 [[!tag shinken packagemanager]]
 [[!img media/shinken.png alt="copied from shinken-monitoring.org" align=right]]
-
+[[!series shinken]]
 
 
 # motivation

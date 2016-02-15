@@ -1,8 +1,7 @@
 [[!meta date="2011-05-18 08:58"]]
 [[!tag gentoo shinken]]
-[[!trailitems pages="posts/shinken/*"]]
 [[!img media/shinken.png alt="copied from shinken-monitoring.org" align=right]]
-
+[[!series shinken]]
 
 [[!img media/200px-gentoo_linux_logo_matte-svg.png alt="gentoo linux logo (copied from commons.wikipedia.org)" align=right]]
 

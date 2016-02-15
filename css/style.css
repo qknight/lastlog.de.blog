@@ -207,3 +207,15 @@ p#tagCloud {
     margin-left: 20px;
     padding-left: 20px;
 }
+
+.alert a{
+   text-decoration: underline;
+}
+
+#feedIcon {
+  background-image: url('../images/feed.png');
+  background-repeat: no-repeat;
+  background-size: 16px 16px;
+  background-position: 0px 16px;
+  padding-left: 20px;
+}

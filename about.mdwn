@@ -24,7 +24,7 @@ more details on denic:
 
 this **blog** is built using:
 
-* meerk
+* pankat
 
     * [go](https://golang.org/)
     * [pandoc](http://pandoc.org/)

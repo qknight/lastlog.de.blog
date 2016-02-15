@@ -1,7 +1,7 @@
 [[!meta date="2013-03-08 17:58"]]
 [[!tag shinken linux security]]
 [[!img media/shinken.png alt="copied from shinken-monitoring.org" align=right]]
-
+[[!series shinken]]
 
 # motivation
 [[!toc levels=2]]

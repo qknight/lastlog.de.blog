@@ -3,7 +3,7 @@
 
 recently i updated my gentoo box. the computer is a c2c processor with a fast nvidia graphics card. **but what is cool about that "you" wonder**?
 
-[[!img media/200px-gentoo_linux_logo_matte-svg.png size=200x align=right]]
+[[!img media/200px-gentoo_linux_logo_matte-svg.png size=200x style="float: right"]]
 
 actually the new portage kde 4.3.3 seems to be very stable (read usable) for me. the **proprietary** graphics **driver** **nvidia.ko** is doing great! i use suspend2ram about 10 times a day. i leave the pc in **suspend2ram** **for days** and it only needs **3W of power**! suspend2ram needs **2-3 secs** for going down and about **7 secs** to come back up! plasma is now at a point that i see it is going to be useful. the expose clone of the kde folks is very very nice to use. dragon player seems to get stable so i can use it with the smb:// kio plugin to watch films from my server. firefox64 selfcompiled now uses a 64bit flash plugin. and finally nearly all applications i'm using regularly work like a charm, which include:
 

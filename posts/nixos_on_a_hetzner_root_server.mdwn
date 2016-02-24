@@ -1,6 +1,6 @@
 [[!meta date="2011-05-10 10:50"]]
 
-[[!img media/nixos-lores.png alt="" align=right]]
+[[!img media/nixos-lores.png alt="" style="float: right"]]
 
 # motivation
 

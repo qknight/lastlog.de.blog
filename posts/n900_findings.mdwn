@@ -1,7 +1,7 @@
 [[!meta date="2011-12-11 17:33"]]
 [[!tag linux n900 packagemanager qt usability]]
 
-[[!img media/315px-nokia_n900-1.jpg alt="" align=right caption="repairing the n900 camera"]]
+[[!img media/315px-nokia_n900-1.jpg alt="" style="float: right" caption="repairing the n900 camera"]]
 
 
 i own a nokia n900 and i'm very happy with it. some time ago it **fell of my pocket** and then the **5mega pixel camera didn't work anymore as well as the flashlight**. i'm a big fan of QR codes and i was often using the flashlight so this was a problem.

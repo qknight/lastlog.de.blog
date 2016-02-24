@@ -1,7 +1,7 @@
 [[!meta date="2010-02-14 17:26"]]
 [[!tag gentoo linux packagemanager technology usability]]
 
-[[!img media/debian_ubuntu_gentoo_package.png alt="" align=right size=200x]]
+[[!img media/debian_ubuntu_gentoo_package.png alt="" style="float: right" size=200x]]
 
 i've been into package managers for some time and i always wondered why developers have to define dependencies manually and not supported by a program using '**a syscall interface monitoring all OPEN calls**' in combination to something like **ldd **for the built binary.
 

@@ -10,7 +10,7 @@ first i thought about implementing a QAbstractItemModel but reading various exam
 
 # what i want to do
 
-[[!img media/screenshot-20100920-223057.png size=450x alt="" align=right]]
+[[!img media/screenshot-20100920-223057.png size=450x alt="" style="float: right"]]
 
 i have an item, represented via a Model and visualized by a a QTreeView. the model basically hosts the item(s) and several views could display that item(s) in different layouts but using exactly the same data.
 

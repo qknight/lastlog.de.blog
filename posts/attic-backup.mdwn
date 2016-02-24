@@ -1,7 +1,7 @@
 [[!meta date="2015-03-19 17:58"]]
 [[!tag backup python linux technology usability]]
 
-[[!img media/attic-backup.jpg size=200x alt="" align="right"]]
+[[!img media/attic-backup.jpg size=200x alt="" style="float: right"]]
 
 # motivation
 i do mysql backups using mysqldump and then move this into rdiff-backup, rsnapshot or duplicity. 
@@ -12,17 +12,19 @@ turns out attic [1] is a much better alternative!
 
 my script produces a mysqldump every night for all databases and stores it in a single tar.bz2 file each so:
 
-    $ du -sh backups-extracted  # about 230 tar-archives (uncompressed)
-    7.8G    backups-extracted
-    
-    $ du -sh backups # about 230 tar-archives (each bz2 compressed)
-    702M    backups
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ { .bash }
+$ du -sh backups-extracted  # about 230 tar-archives (uncompressed)
+7.8G    backups-extracted
 
-    $ ls -lath backups-extracted.tar.bz2 # about 230 tar-archives (compressed into a single bz2)
-    713M backups-extracted.tar.bz2
-    
-    $ du -sh attic # about 230 tar-archives (added into attic)
-    105M    attic
+$ du -sh backups # about 230 tar-archives (each bz2 compressed)
+702M    backups
+
+$ ls -lath backups-extracted.tar.bz2 # about 230 tar-archives (compressed into a single bz2)
+713M backups-extracted.tar.bz2
+
+$ du -sh attic # about 230 tar-archives (added into attic)
+105M    attic
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **this is an outstanding result** and to check if attic didn't scramble any bits i restored the backup and used 'diff -r dir1 dir2' and diff didn't report any difference.
 
@@ -33,7 +35,8 @@ note: the databases are very idle and there is no change most of the time.
 some stats for normal backups can be found at [2] so i quote what Dan wrote:
 
 > Obnam and Attic are two de-duplicating backup programs that seem to have a very similar design, so I've been comparing them.  Here are my observations and benchmarks.  I would be happy to receive corrections and or additions to this information.  The Attic author has also written about this at
-<pre>
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ { .shell }
 Important question:
 
 How resilient are the repositories that Obnam and Attic use?  If a
@@ -95,13 +98,11 @@ and when there are changes, it is also very efficient.  Can either
 of these programs get close to that speed in the future?
 
 Dan
-</pre>
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 # summary
 after obnam failed in any aspect because of performance issues, attic seems to be what obname promised. i might soon bring attic in as a replacement for my current modules. one thing i don't like too much though is that it requires to run on the target machine and requires a ssh connection and i a) do not want to run a open ssh server at home nor b) keep an active reverse tunnel open:
-
-
 
 # links
 

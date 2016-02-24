@@ -1,7 +1,7 @@
 
 [[!meta date="2009-10-10 17:14"]]
 [[!tag linux technology]]
-[[!img media/mumble.png alt="" align=right]]
+[[!img media/mumble.png alt="" style="float: right"]]
 
 **so how is that done?**
 

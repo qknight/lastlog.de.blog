@@ -1,7 +1,7 @@
 [[!meta date="2015-02-13 10:58"]]
 [[!tag erp odoo python usability]]
 
-[[!img media/company_logo.png alt="" align=right]]
+[[!img media/company_logo.png alt="" style="float: right"]]
 
 # motivation
 i've been looking into various open source ERP systems on [1] and started with odoo version 8.0.

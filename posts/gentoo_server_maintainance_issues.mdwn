@@ -1,7 +1,7 @@
 [[!meta date="2011-01-12 21:22"]]
 [[!tag gentoo linux packagemanager usability]]
 
-[[!img media/200px-gentoo_linux_logo_matte-svg.png size=100x alt="" align=right]]
+[[!img media/200px-gentoo_linux_logo_matte-svg.png size=100x alt="" style="float: right"]]
 
 # motivation
 

@@ -4,7 +4,7 @@
 
 # motivation
 
-[[!img media/hp-com-elitebook-8530w.jpg size=180x caption="hp elite book 8530w, source hp.com" align=right]]
+[[!img media/hp-com-elitebook-8530w.jpg size=180x caption="hp elite book 8530w, source hp.com" style="float: right"]]
 
 i own a **hp elitebook 8530w **which is a good notebook if used with linux. it does have a nvidia card:
 

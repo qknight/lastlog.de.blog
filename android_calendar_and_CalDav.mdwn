@@ -1,5 +1,5 @@
 [[!meta date="2013-04-15 11:54"]]
-[[!img media/Android_robot.svg.png align=right size=100x]]
+[[!img media/Android_robot.svg.png style="float: right" size=100x]]
 [[!draft]]
 [[!tagfoo linux technology usability android CalDAV CardDAV]]
 

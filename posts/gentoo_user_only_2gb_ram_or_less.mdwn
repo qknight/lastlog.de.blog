@@ -1,7 +1,7 @@
 [[!meta date="2010-09-19 23:32"]]
 [[!tag gentoo packagemanager usability]]
 
-[[!img media/200px-gentoo_linux_logo_matte-svg.png alt="gentoo linux logo (copied from commons.wikipedia.org" align=right width=140]]
+[[!img media/200px-gentoo_linux_logo_matte-svg.png alt="gentoo linux logo (copied from commons.wikipedia.org" style="float: right" width=140]]
 
 # motivation 
 when compiling all the used software before installing it one might find himself in this situation i'm face often:

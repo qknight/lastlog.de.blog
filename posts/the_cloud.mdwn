@@ -1,7 +1,7 @@
 [[!meta date="2012-07-11 17:03"]]
 [[!tag packagemanager security society technology usability virtualization]]
 
-[[!img media/konqueror.png alt="" caption="what does 'cloud' stand for?" align=right size=200x]]
+[[!img media/konqueror.png alt="" caption="what does 'cloud' stand for?" style="float: right" size=200x]]
 
 # what does ‘cloud’ stand for?
 

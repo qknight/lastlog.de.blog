@@ -1,7 +1,7 @@
 [[!meta date="2009-12-07 23:04"]]
 [[!tag cmake gentoo linux technology usability]]
 
-[[!img media/cmakebanner.jpg alt="" align=right]]
+[[!img media/cmakebanner.jpg alt="" style="float: right"]]
 
 #motivation
 

@@ -1,7 +1,7 @@
 [[!meta date="2011-05-20 16:02"]]
 [[!tag gentoo linux packagemanager technology]]
 
-[[!img media/libvirtlogo.png size=150x align=right]]
+[[!img media/libvirtlogo.png size=150x style="float: right"]]
 #motivation
 
 

@@ -1,7 +1,7 @@
 [[!meta date="2012-05-21 23:14"]]
 [[!tag linux nixos usability]]
 
-[[!img media/nixos-lores.png align=right alt=""]]
+[[!img media/nixos-lores.png style="float: right" alt=""]]
 
 this has been discussed on many blogs but since i had this issue twice now and especially since svn changed the parameter list and therefore many pages describing this are thus wrong, here it is again. also nobody seems to implement the workflow i like, that is:
 
@@ -10,7 +10,7 @@ this has been discussed on many blogs but since i had this issue twice now and e
   * on the right side is the new version (this file is only important while merging)
 
 
-[[!img media/meld_in_svn.png alt="" align=right size=700x align=center caption="meld on nixos"]]
+[[!img media/meld_in_svn.png alt="" style="float: right" size=700x style="float: none" caption="meld on nixos"]]
 
 
 

@@ -10,7 +10,7 @@ If such a session is broken the result is that all started processes (which can 
 The mainstream solution to this problem is using a program called "screen". **This "screen" has many features which make it a program worth knowing** - even for local use, see [2] for screen commands I'm frequently using.
 
 
-[[!img media/screen_in_konsole.png alt="today i had the already mentioned problem: **xbuffer screwup**" align=center]]
+[[!img media/screen_in_konsole.png alt="today i had the already mentioned problem: **xbuffer screwup**" style="float: none"]]
 
 So back to the topic of this posting the issue with the bad R300 driver and X session resets.
 

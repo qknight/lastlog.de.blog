@@ -2,7 +2,7 @@
 [[!meta date="2010-12-24 17:14"]]
 [[!tag tech]]
 
-[[!img media/nixos-lores.png alt="" align=right]]
+[[!img media/nixos-lores.png alt="" style="float: right"]]
 
 # motivation
 package management is great when it just works. but often 'edge cases' reveal shortcomings in the respective package manager. a very innovative approach to package deployment is implemented in the NIX package manager.

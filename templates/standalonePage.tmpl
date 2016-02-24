@@ -11,6 +11,7 @@
 {{if .Tocify}}
 <script src="{{.RelativeSrcRootPath}}/js/jquery-ui-1.9.1.custom.min.js"></script>
 <script src="{{.RelativeSrcRootPath}}/js/jquery.tocify.js"></script>
+
 <link type="text/css" rel="stylesheet" href="{{.RelativeSrcRootPath}}/css/jquery.tocify.css" />
 {{end}}
 <link type="text/css" rel="stylesheet" href="{{.RelativeSrcRootPath}}/css/bootstrap.min.css" />
@@ -94,14 +95,14 @@ code > span.in { color: #808080; font-weight: bold; font-style: italic; } /* Inf
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><a href="{{.RelativeSrcRootPath}}/posts.html"><span class="glyphicon glyphicon-list" aria-hidden="true"></span> Posts</a></li>
-        <li><a href="{{.RelativeSrcRootPath}}/about.html"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> About</a></li>
+        <li><a href="{{.RelativeSrcRootPath}}/posts.html"><span class="glyphicon glyphicon-list" aria-hidden="true"></span> all posts</a></li>
+        <li><a href="{{.RelativeSrcRootPath}}/about.html"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> about</a></li>
 <!--         <li><a href="#">Tags</a></li> -->
 <!--         <li><a href="#">Recent Changes</a></li> -->
       </ul>
         
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="{{.RelativeSrcRootPath}}/feed.xml" id="feedIcon">Feed</a></li>
+        <li><a href="{{.RelativeSrcRootPath}}/feed.xml" id="feedIcon">feed</a></li>
       </ul>
       <!--
           <li><a href="#">Edit</a></li>
@@ -121,15 +122,14 @@ code > span.in { color: #808080; font-weight: bold; font-style: italic; } /* Inf
 
 
   <div id="headerContainer">
-    <header class="header">
-    {{.TitleNAV}}
-    <a href="#">{{.Title}}</a>
-    </header>
+    <header class="header">{{.TitleNAV}}</header>
   </div>
 
   {{.SeriesNAV}}
 
   <div class="article">
+    <h1 id="SiteTitle">{{.Title}}</h1>
+    {{.Meta}}
     {{.Body}}
   </div>
 </div>
@@ -191,6 +191,17 @@ $("#toc").hover(function() {
 });
 </script>       
 {{end}}
+
+<script>
+$(window).keydown(function(event) {
+  if(event.keyCode == 37){
+    $('.glyphicon-chevron-left')[0].click()
+  }
+  if(event.keyCode == 39){
+    $('.glyphicon-chevron-right')[0].click()
+  }
+});
+</script>
 
 </body>
 </html>

@@ -1,6 +1,6 @@
 [[!meta date="2013-03-23 21:54"]]
 [[!tag linux usability nixos]]
-[[!img media/nixos-lores.png align=right]]
+[[!img media/nixos-lores.png style="float: right"]]
 
 # NixOS vortrag beim CCCS 
 am 08.11.2012 habe ich in stuttgart in der stadtbibliothek, am mailaender platz, einen vortrag ueber NixOS gehalten.

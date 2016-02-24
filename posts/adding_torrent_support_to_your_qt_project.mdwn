@@ -1,7 +1,7 @@
 [[!meta date="2010-10-11 15:27"]]
 [[!tag qt p2p technology usability]]
 
-[[!img media/peertopeer.png alt="" align=right caption="see [2] for license"]]
+[[!img media/peertopeer.png alt="" style="float: right" caption="see [2] for license"]]
 
 #motivation
 

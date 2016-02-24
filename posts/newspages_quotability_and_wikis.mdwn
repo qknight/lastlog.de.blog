@@ -1,7 +1,7 @@
 [[!meta date="2012-05-04 19:32"]]
 [[!tag society technology usability visualization]]
 
-[[!img media/evopedia.png align=right]]
+[[!img media/evopedia.png style="float: right"]]
 
 #motivation
 

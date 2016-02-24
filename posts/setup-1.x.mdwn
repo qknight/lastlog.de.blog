@@ -1,7 +1,7 @@
 [[!meta date="2015-05-23 10:58"]]
 [[!tag bios pci hardware usability]]
 
-[[!img media/hwtools.net-eGPU-BOX1.jpg  alt="http://www.hwtools.net/Adapter/PE4H.html" width="200px" align=right]]
+[[!img media/hwtools.net-eGPU-BOX1.jpg  alt="http://www.hwtools.net/Adapter/PE4H.html" width="200px" style="float: right"]]
 
 # motivation
 extending a lenovo t530 with an external GPU via the mini pcie adapter slot for gaming and interesting setups.

@@ -1,6 +1,6 @@
 [[!meta date="2014-02-05 14:17"]]
 
-[[!img media/nixos-lores.png alt="" align=right]]
+[[!img media/nixos-lores.png alt="" style="float: right"]]
 
 [[!tag nixos technology usability]]
 
@@ -24,19 +24,19 @@ let's see how this works. to use the gmane [2] interface to access mailinglists 
 * the gmane news group address is: **news.gmane.org**
 * once you added a news group account into thunderbird you can sign up to several mailing lists using a context menu.
 
-[[!img media/mailinglist_to_newsgroup_wrapper.jpeg alt="" align=center]]
+[[!img media/mailinglist_to_newsgroup_wrapper.jpeg alt="" style="float: none"]]
 
 (picture above: shows the nix-dev@cs.uu.nl ml)
 
-[[!img media/mailinglist_to_newsgroup_wrapper2.jpeg alt="" align=center]]
+[[!img media/mailinglist_to_newsgroup_wrapper2.jpeg alt="" style="float: none"]]
 
 (picture above: shows the import dialog when selecting mailing lists to subscribe to)
 
-[[!img media/mailinglist_to_newsgroup_wrapper3.jpeg alt="" align=center]]
+[[!img media/mailinglist_to_newsgroup_wrapper3.jpeg alt="" style="float: none"]]
 
 (picture above: shows that there are too many mailinglists for one human being to be read in a lifetime ;-)
 
-[[!img media/mailinglist_to_newsgroup_wrapper4.jpeg alt="" align=center]]
+[[!img media/mailinglist_to_newsgroup_wrapper4.jpeg alt="" style="float: none"]]
 
 (picture above: shows the webinterface which is parsed by google so that you can find mailing list entries in searches)
 

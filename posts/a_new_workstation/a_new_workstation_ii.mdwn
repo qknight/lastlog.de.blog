@@ -1,7 +1,7 @@
 [[!meta date="2010-02-21 11:46"]]
 [[!tag audio gentoo linux technology usability]]
 
-[[!img media/hp-com-elitebook-8530w.jpg alt="source hp.com" align=right size=300x]]
+[[!img media/hp-com-elitebook-8530w.jpg alt="source hp.com" style="float: right" size=300x]]
 
 #motivation
 

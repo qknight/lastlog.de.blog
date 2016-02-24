@@ -1,7 +1,7 @@
 [[!meta date="2011-01-04 00:53"]]
 [[!tag gentoo linux security]]
 
-[[!img media/200px-gentoo_linux_logo_matte-svg.png alt="" align=right]]
+[[!img media/200px-gentoo_linux_logo_matte-svg.png alt="" style="float: right"]]
 
 # security & integrity
 

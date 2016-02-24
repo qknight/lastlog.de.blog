@@ -9,7 +9,7 @@
 **nixos support for 'armv7l' is getting much better in general**. in this postings i want to show a few insights on how to get nixos running on any ARM board with general linux support. much of the multi-platoform stuff was probably created by **viric** and later extended by **dezgeg**.
 
 
-[[!img media/odroid-xu4.jpg width="300px" alt="Odroid XU4 board" caption="Odroid XU4, picture form Hardkernel" align=center class="noFancy" label="(c) hardkernel"]]
+[[!img media/odroid-xu4.jpg width="300px" alt="Odroid XU4 board" caption="Odroid XU4, picture form Hardkernel" style="float: none" class="noFancy" label="(c) hardkernel"]]
 
 * **Samsung Exynos5422 Cortex™-A15 2Ghz and Cortex™-A7 Octa core CPUs**
 * Mali-T628 MP6(OpenGL ES 3.0/2.0/1.1 and OpenCL 1.1 Full profile)

@@ -1,7 +1,7 @@
 [[!meta date="2012-02-25 00:29"]]
 [[!tag society technology documentary podcast]]
 
-[[!img media/purple_podcasts.png caption="purple_podcasts from harenome razanajato" align=right size=170x]]
+[[!img media/purple_podcasts.png caption="purple_podcasts from harenome razanajato" style="float: right" size=170x]]
 
 
 # documentaries

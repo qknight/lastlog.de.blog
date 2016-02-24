@@ -1,7 +1,7 @@
 [[!meta date="2010-12-21 02:39"]]
 [[!tag gentoo linux p2p packagemanager qt society]]
 
-[[!img media/200px-gentoo_linux_logo_matte-svg.png width=120x align=right]]
+[[!img media/200px-gentoo_linux_logo_matte-svg.png width=120x style="float: right"]]
 
 #motivation 
 evopedia [1], the offline wikipedia reader, has been ported to gentoo linux. the ebuild can be found at [2].

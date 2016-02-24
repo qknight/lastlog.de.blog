@@ -3,7 +3,7 @@
 [[!tag gentoo linux ogre3d technology usability]]
 [[!series ogre]]
 
-[[!img media/ogrelogo-small.jpg alt="" align=right size=400x]]
+[[!img media/ogrelogo-small.jpg alt="" style="float: right" size=400x]]
 
 
 # ogre 3d problems on gentoo and general ogre 3d concept discussions

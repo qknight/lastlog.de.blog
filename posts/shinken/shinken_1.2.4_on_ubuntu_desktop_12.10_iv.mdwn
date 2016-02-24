@@ -1,6 +1,6 @@
 [[!meta date="2013-04-03 10:58"]]
 [[!tag shinken linux security]]
-[[!img media/shinken.png alt="copied from shinken-monitoring.org" align=right]]
+[[!img media/shinken.png alt="copied from shinken-monitoring.org" style="float: right"]]
 [[!series shinken]]
 
 # motivation

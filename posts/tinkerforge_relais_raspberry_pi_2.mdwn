@@ -1,5 +1,5 @@
 [[!meta date="2014-12-10 03:01"]]
-[[!img media/tinkerforge-logo.jpg align=right]]
+[[!img media/tinkerforge-logo.jpg style="float: right"]]
 [[!tag raspberrypi tinkerforge linux usability node.js]]
 [[!series illuminator]]
 
@@ -16,7 +16,7 @@ i've upgraded my illuminator installation, see previous post: <http://blog.lastl
 
 the main reason for this upgrade was that the used **'multi touch bricklet' was very very sensitive to toggling the state by touching not only the control field, which would have been what one excpets, but even by touching the cables connecting the bricklet with the multi touch field. this often resulted in unwanted toggling of devices - and since these are 230V i didn't want that to happen at all.**
 
-[[!img media/tinkerforge/button-bar-front.jpg align=center size=700x caption="the interface with the 8 buttons"]]
+[[!img media/tinkerforge/button-bar-front.jpg style="float: none" size=700x caption="the interface with the 8 buttons"]]
 
 <font color="red"><hr>
 
@@ -41,7 +41,7 @@ I'M NOT RESPONSIBLE IF YOUR DEVICE KILLS YOUR CAT OR BURNS DOWN YOUR HOUSE - YOU
 # hardware setup
 
 ## new interface with 8 buttons
-[[!img media/tinkerforge/button-bar-internals.jpg align=center size=700x caption="internals of the interface"]]
+[[!img media/tinkerforge/button-bar-internals.jpg style="float: none" size=700x caption="internals of the interface"]]
 
 ## lightbox updated
 
@@ -57,7 +57,7 @@ I'M NOT RESPONSIBLE IF YOUR DEVICE KILLS YOUR CAT OR BURNS DOWN YOUR HOUSE - YOU
      |- Ralink RT2571W (WLAN AP using hostapd)
         Bus 001 Device 004: ID 050d:705a Belkin Components F5D7050 Wireless G Adapter v3000 [Ralink RT2571W]
 
-[[!img media/tinkerforge/lightbox-updated.jpg align=center size=700x caption="lightbox extend by WIFI and raspberry pi B+"]]
+[[!img media/tinkerforge/lightbox-updated.jpg style="float: none" size=700x caption="lightbox extend by WIFI and raspberry pi B+"]]
 
 ### raspberry pi B+ hardware upgrade
 
@@ -128,11 +128,11 @@ this works very well with android and my linux based laptop. someone had problem
     # lsusb
     Bus 001 Device 004: ID 050d:705a Belkin Components F5D7050 Wireless G Adapter v3000 [Ralink RT2571W]
 
-[[!img media/tinkerforge/Ralink-RT2571W.jpg align=center size=500x caption="good hardware for AP mode using hostapd - Ralink-RT2571W"]]
+[[!img media/tinkerforge/Ralink-RT2571W.jpg style="float: none" size=500x caption="good hardware for AP mode using hostapd - Ralink-RT2571W"]]
 
 note: initially i tried two realtek based adapters, both worked to a certain degree but failed as access point, as my connection would drop the wpa_supplicant subscripted client, when watching youtube videos or similar things involving big data rates. others seem to have problems as well, see discussion at [2]. i tried to debug this for a while but the problem seems to be in the driver.
 
-[[!img media/tinkerforge/Realtek-RTL8188CUS.jpg align=center size=300x caption="bad hardware for AP mode using hostapd - Realtek-RTL8188CU and Realtek-RTL8188CUS"]]
+[[!img media/tinkerforge/Realtek-RTL8188CUS.jpg style="float: none" size=300x caption="bad hardware for AP mode using hostapd - Realtek-RTL8188CU and Realtek-RTL8188CUS"]]
 
 ### raspberry pi - RS232 Serial Interface
 

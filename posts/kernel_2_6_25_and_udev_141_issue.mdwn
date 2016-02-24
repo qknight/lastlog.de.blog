@@ -1,7 +1,7 @@
 [[!meta date="2010-03-18 15:39"]]
 [[!tag gentoo linux packagemanager technology]]
 
-[[!img media/udev-tux.png alt="" align=right]]
+[[!img media/udev-tux.png alt="" style="float: right"]]
 
 #the problem:
 

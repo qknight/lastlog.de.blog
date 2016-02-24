@@ -1,7 +1,7 @@
 [[!meta date="2010-03-29 18:55"]]
 [[!tag usability visualization windows]]
 
-[[!img media/acronis_logotype.png size=300x align=right]]
+[[!img media/acronis_logotype.png size=300x style="float: right"]]
 i have a windows xp server on which i use 'acronis true image home 2009' for periodical backups.
 
 

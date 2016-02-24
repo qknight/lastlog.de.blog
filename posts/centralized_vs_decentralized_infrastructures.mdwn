@@ -1,6 +1,6 @@
 [[!meta date="2009-06-06 13:54"]]
 [[!tag society technology]]
-[[!img media/decentralized_vs_centralized.gif alt="" align=right]]
+[[!img media/decentralized_vs_centralized.gif alt="" style="float: right"]]
 
 today i thought about wireless lan an the upcoming wlan standard 802.11s [1] with the newcomer technology called ‘mesh networking’ [2], [3]. i just then realized that before you can deploy a decentralized infrastructure you have to first specify the solution using a centralized infrastructure. i give you some examples:
 

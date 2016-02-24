@@ -1,7 +1,7 @@
 [[!meta date="2009-05-19 18:30"]]
 [[!tag linux openmoko]]
 
-[[!img media/om.jpg alt="today i had the already mentioned problem: **xbuffer screwup**" align=right]]
+[[!img media/om.jpg alt="today i had the already mentioned problem: **xbuffer screwup**" style="float: right"]]
 
 i played with the openmoko to get an idea what could cause this and i come up with this:
 	

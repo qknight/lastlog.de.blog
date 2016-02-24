@@ -1,5 +1,5 @@
 [[!meta date="2014-02-23 13:54"]]
-[[!img media/tinkerforge-logo.jpg align="right"]]
+[[!img media/tinkerforge-logo.jpg style="float: right"]]
 [[!tag raspberrypi tinkerforge linux usability node.js scala lift]]
 [[!series illuminator]]
 
@@ -63,7 +63,7 @@ because of this built my own device for controlling 6x 230V using my PC, phone, 
 
 here is my setup:
 
-[[!img media/tinkerforge_relais_raspberry_pi.jpg align=center size=700x caption="shows the layout of my setup"]]
+[[!img media/tinkerforge_relais_raspberry_pi.jpg style="float: none" size=700x caption="shows the layout of my setup"]]
 
 the setup consists of:
 
@@ -80,11 +80,11 @@ the setup consists of:
 
 the following 3 images show my prototype which, at that time, did not include the multi touch bricklet but instead a 4th dual relais. 
 
-[[!img media/tinkerforge_relais_raspberry_pi_hardware1.jpg align=center size=700x caption="image shows raspberry pi, network and usb cabeling"]]
+[[!img media/tinkerforge_relais_raspberry_pi_hardware1.jpg style="float: none" size=700x caption="image shows raspberry pi, network and usb cabeling"]]
 
-[[!img media/tinkerforge_relais_raspberry_pi_hardware2.jpg align=center size=700x caption="image shows power sockets"]]
+[[!img media/tinkerforge_relais_raspberry_pi_hardware2.jpg style="float: none" size=700x caption="image shows power sockets"]]
 
-[[!img media/tinkerforge_relais_raspberry_pi_hardware3.jpg align=center size=700x caption="image shows the DIN rail with the 230V wiring and how i implemented the cable relief"]]
+[[!img media/tinkerforge_relais_raspberry_pi_hardware3.jpg style="float: none" size=700x caption="image shows the DIN rail with the 230V wiring and how i implemented the cable relief"]]
 
 ## the evolution of my tinkerforge hardware stack
 
@@ -107,7 +107,7 @@ since i wanted to control the stack from my mobile phone and tablet (as well as 
     |B- dual relias bricklet (2 230V relais)
     |C- dual relias bricklet (2 230V relais)
 
-[[!img media/extension_wifi_stack_600.jpg align=center size=300x caption="WIFI extension picture (c) tinkerforge.com"]]
+[[!img media/extension_wifi_stack_600.jpg style="float: none" size=300x caption="WIFI extension picture (c) tinkerforge.com"]]
 
 i was using the WIFI extension for weeks but it turned out that my reception wasn't very good and had a lot connection issues (probably caused by bad SNR with additional D-Link quirks). 
 
@@ -154,7 +154,7 @@ requirements:
 
 
 
-[[!img media/tinkerforge_relais_raspberry_pi_screenshot.jpg align=center caption="shows the layout of my UI controlling the relais" ]]
+[[!img media/tinkerforge_relais_raspberry_pi_screenshot.jpg style="float: none" caption="shows the layout of my UI controlling the relais" ]]
 
 i experimented with different languages:
 
@@ -225,13 +225,13 @@ after i applied the optimization i tested the chat app again:
 
 ### lift performance on raspberry pi without optimization using firebug
 
-[[!img media/chat-app-lift1.jpeg align=center size=700x]]
+[[!img media/chat-app-lift1.jpeg style="float: none" size=700x]]
 
 the comet roundtrip time was from hitting return on the client and seeing the view updates on the client is about **2250 ms**.
 
 ### lift performance on raspberry pi after optimization using firebug
 
-[[!img media/chat-app-lift2.jpeg align=center size=700x]]
+[[!img media/chat-app-lift2.jpeg style="float: none" size=700x]]
 
 the comet roundtrip time was from hitting return on the client and seeing the view updates on the client is about **273 ms**.
 

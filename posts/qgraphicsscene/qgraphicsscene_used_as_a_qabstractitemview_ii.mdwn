@@ -1,5 +1,6 @@
 [[!meta date="2010-02-02 02:22"]]
 [[!tag qt technology usability]]
+[[!series qgraphicsscene]]
 
 #motivation
 

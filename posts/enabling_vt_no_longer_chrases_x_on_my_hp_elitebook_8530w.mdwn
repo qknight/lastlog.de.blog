@@ -1,5 +1,5 @@
 [[!meta date="2010-07-21 11:21"]]
-[[!img media/.jpg alt="" align=right]]
+[[!img media/.jpg alt="" style="float: right"]]
 [[!tag gentoo linux technology usability]]
 
 # motivation

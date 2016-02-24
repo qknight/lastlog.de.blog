@@ -2,7 +2,7 @@
 [[!tag nixos shell usability nixos python]]
 [[!draft]]
 
-[[!img media/nixos-lores.png alt="" align=right]]
+[[!img media/nixos-lores.png alt="" style="float: right"]]
 
 # motivation
 nixos is all about **custom environments** and **containing application not interfering with each other**. while this is **'the dream'** for the **ops team** it was still unhandy for **dev teams** until now! recent development(s) are about to kick in, setting usability levels to a degree most developers would enjoy.

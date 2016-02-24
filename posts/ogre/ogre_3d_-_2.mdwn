@@ -1,5 +1,5 @@
 [[!meta date="2010-02-20 03:42"]]
-[[!img media/ogrelogo-small.jpg alt="" align=right width="200px"]]
+[[!img media/ogrelogo-small.jpg alt="" style="float: right" width="200px"]]
 
 [[!tag gentoo linux ogre3d packagemanager technology usability]]
 

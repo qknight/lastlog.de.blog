@@ -47,7 +47,7 @@ usability is a thriving motor in innovation and this posting is about **how to m
 
 ## the human machine interface (HMI)
 
-[[!img media/iPad-Mount-Cars.jpg size=300x align=center caption="Daimler research project, see [12]"]]
+[[!img media/iPad-Mount-Cars.jpg size=300x style="float: none" caption="Daimler research project, see [12]"]]
 
 in regards to display integration this design is my favourite (found at [12]), why? 
 
@@ -68,7 +68,7 @@ the concept i'm thinking of is this:
 
 now the user can either **use the tablet or a smartphone to query the stats of this car** using the 'data center' 
 
-[[!img media/infotainment.jpeg size=700x alt="created by joachim schiele" align=center caption="'tablet as infotainment solution in a car' by joachim schiele"]]
+[[!img media/infotainment.jpeg size=700x alt="created by joachim schiele" style="float: none" caption="'tablet as infotainment solution in a car' by joachim schiele"]]
 
 the 'data center' would make access to the following data available:
 
@@ -118,7 +118,7 @@ here are three **industry grade tablets** which i find interesting:
 ### motorola ET1 Enterprise Tablet
 > Looking for a true enterprise-class tablet that you can deploy anywhere? The ET1 offers everything you need — from security and durability to flexibility and manageability. With WLAN or WWAN connectivity, you can count on the ET1 to deliver all the information your workforce needs to get the job done — whether they are inside the four walls or out in the field.
 
-[[!img media/ET1_TierOne_ProductImage.jpg alt="" align=center caption="ET1 enterprise tablet"]]
+[[!img media/ET1_TierOne_ProductImage.jpg alt="" style="float: none" caption="ET1 enterprise tablet"]]
 
 motorola ET1 specification states [2]:
 
@@ -153,7 +153,7 @@ btw: both devices [3] and [4] are [certified MIL-STD-810 certified](http://en.wi
 
 **being froced to use singletouch or multitouch is a real problem - especially when driving!** that is because most tablets were designed to be hold in your hands while being operated. however, consider an external control, like the 'bmw x5 idrive conroller', is added to the tablet (via bluetooth BT) and the tablet is used in a 'car mode' (for instance by using the app 'Car Home Ultra'). such an integration would seriously make a difference.
 
-[[!img media/320px-IDrive_controller_X5_2.JPG alt="from wikipedia - thanks to Andi2612" align=right size=300x align=center caption="bmw x5 idrive conroller"]]
+[[!img media/320px-IDrive_controller_X5_2.JPG alt="from wikipedia - thanks to Andi2612" style="float: right" size=300x style="float: none" caption="bmw x5 idrive conroller"]]
 
 such dials could be modified to have a very sensitive surface which would allow to write letters, without having to glance at the screen, even while driving - probably everyone remembers when palm cam up with handwriting recognition. why not integrate that?
 
@@ -167,7 +167,7 @@ another major issues with OEMs, they ignore the community without realizing that
 
 being open helps as you give others the possibility to contribute. see [16] and [17] how mighty this principle is. this graph illustrates the adaption rate to the linux kernel:
 
-[[!img media/osadl-linux-adaption-rate.png alt="" align=right align=center caption="from osadl.com (dr. carsten emde)"]]
+[[!img media/osadl-linux-adaption-rate.png alt="" style="float: right" style="float: none" caption="from osadl.com (dr. carsten emde)"]]
 
 the graph shows a few interesting trends:
 
@@ -215,9 +215,9 @@ there exists a nice introduction video to osmand [14], the only problem seems it
 
 yourfacetatooed on youtube.com has built a very interesting concealable tablet integration, see [11] (video position 1:20 onwards)
 
-[[!img media/yourfacetatooed-Motorized-galaxy-tablet-incar-install-open.jpeg alt="" align=right size=500x align=center caption=""]]
+[[!img media/yourfacetatooed-Motorized-galaxy-tablet-incar-install-open.jpeg alt="" style="float: right" size=500x style="float: none" caption=""]]
 
-[[!img media/yourfacetatooed-Motorized-galaxy-tablet-incar-install-closed.jpeg alt="" align=right size=500x align=center caption=""]]
+[[!img media/yourfacetatooed-Motorized-galaxy-tablet-incar-install-closed.jpeg alt="" style="float: right" size=500x style="float: none" caption=""]]
 
 ## bikelogger
 

@@ -1,4 +1,4 @@
-[[!img media/nixos-lores.png alt="" align=right]]
+[[!img media/nixos-lores.png alt="" style="float: right"]]
 [[!meta date="2014-05-31 16:01"]]
 [[!tag nixos linux packagemanager usability]]
 
@@ -9,7 +9,7 @@
 i've been working on nix-build-view a lot and this is the first preview of my work. if you like/dislike my work please let me know using email to js@lastlog.de. you can find my work at [1]. 
 
 
-[[!img media/nix-build-view.jpeg size=700x alt="" align=center caption="nix-build-view visualizing nix-build"]]
+[[!img media/nix-build-view.jpeg size=700x alt="" style="float: none" caption="nix-build-view visualizing nix-build"]]
 
 # looking back
 

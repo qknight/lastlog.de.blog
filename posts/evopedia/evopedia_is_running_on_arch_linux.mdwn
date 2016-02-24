@@ -2,7 +2,7 @@
 [[!tag evopedia arch packagemanager qt]]
 [[!trailitems pages="posts/evopedia/*"]]
 
-[[!img media/arch-linux-logo.png size=150x align=right]]
+[[!img media/arch-linux-logo.png size=150x style="float: right"]]
 
 #motivation
 evopedia [1] is now working on arch linux! i've uploaded the PKGBUILD to AUR [2], which means that it is now very easy for arch linux users to use evopedia.

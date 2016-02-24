@@ -5,7 +5,7 @@
 
 a few months ago i had to fix a computer and was using memtest86 from a ubuntu usb boot stick. the program always returned this error:
 
-[[!img media/memtest86-fail.jpg caption="memtest86 fails because of broken usb stick it was on" size=800x align=center]]
+[[!img media/memtest86-fail.jpg caption="memtest86 fails because of broken usb stick it was on" size=800x style="float: none"]]
 
 # the problem & solution
 

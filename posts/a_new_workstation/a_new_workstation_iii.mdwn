@@ -1,7 +1,7 @@
 [[!meta date="2011-02-20 14:45"]]
 [[!tag gentoo linux usability]]
 
-[[!img media/hp-com-elitebook-8530w.jpg alt="source hp.com" align=right size=300x]]
+[[!img media/hp-com-elitebook-8530w.jpg alt="source hp.com" style="float: right" size=300x]]
 
 # nvidia and the proprietary driver
 

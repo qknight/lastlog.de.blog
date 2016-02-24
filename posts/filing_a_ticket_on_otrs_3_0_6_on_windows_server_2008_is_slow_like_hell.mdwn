@@ -1,7 +1,7 @@
 [[!meta date="2011-08-03 15:40"]]
 [[!tag otrs windows]]
 
-[[!img media/acquia_marina_logo.jpg size=320x alt="" align=right]]
+[[!img media/acquia_marina_logo.jpg size=320x alt="" style="float: right"]]
 
 # problem description
 

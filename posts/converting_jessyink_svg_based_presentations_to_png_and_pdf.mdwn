@@ -1,7 +1,7 @@
 [[!meta date="2014-05-05 12:30"]]
 [[!tag svg jessyink pdf usability]]
 
-[[!img media/jessyink.jpg alt="" align=right]]
+[[!img media/jessyink.jpg alt="" style="float: right"]]
 # motivation
 i like to **design my slides using inkscape** and then **using the plugin called jessyink** to create interactive SVGs. these are later displayed using firefox or chromium (does NOT work in IE). 
 

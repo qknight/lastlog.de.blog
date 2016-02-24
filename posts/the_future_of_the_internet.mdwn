@@ -1,7 +1,7 @@
 [[!meta date="2010-02-01 11:30"]]
 [[!tag society technology usability]]
 
-[[!img media/konqueror-icon.png alt="" align=right]]
+[[!img media/konqueror-icon.png alt="" style="float: right"]]
 
 #motivation
 

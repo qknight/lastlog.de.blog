@@ -1,7 +1,7 @@
 [[!meta date="2010-12-25 15:26"]]
 [[!tag packagemanager usability windows]]
 
-[[!img media/evopedia.png size=150x align=right]]
+[[!img media/evopedia.png size=150x style="float: right"]]
 
 # evopedia 0.4.2 on windows
 

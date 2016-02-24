@@ -1,7 +1,7 @@
 [[!meta date="2011-01-28 18:22"]]
 [[!tag cmake linux packagemanager technology usability nixos]] 
 
-[[!img media/nixos-lores.png alt="" align=right]]
+[[!img media/nixos-lores.png alt="" style="float: right"]]
 
 
 #motivation

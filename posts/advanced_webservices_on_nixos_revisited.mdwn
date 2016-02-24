@@ -1,6 +1,6 @@
 [[!meta date="2014-04-30 16:33"]]
 
-[[!img media/nixos-lores.png alt="" align=right]]
+[[!img media/nixos-lores.png alt="" style="float: right"]]
 
 [[!tag nixos linux technology usability containerization webservice]]
 [[!series webservices]]
@@ -13,7 +13,7 @@ NixOS is all about containment. in NixOS practically every program is running in
 
 in this posting i want to share my thoughts about isolating webservices in the same way and discuss benefits/drawbacks of various approaches. it is also a **followup posting to [1]**. i've held a **talk about declarative webservices [2] at the easterhegg14** but since it was in german here is the english writeup.
 
-[[!img media/advanced-webservices-on-nixos-revisited.jpg align=center size=700x caption="apache as reverse proxy using vhosts, see [7] to replicate this setup"]]
+[[!img media/advanced-webservices-on-nixos-revisited.jpg style="float: none" size=700x caption="apache as reverse proxy using vhosts, see [7] to replicate this setup"]]
 
 # warning
 
@@ -442,7 +442,7 @@ these ports can obviously be added to the reverse-proxy setup as the internal ni
 
 # conclusion
 
-[[!img media/advanced-webservices-on-nixos-revisited2.jpg align=center size=700x caption="when you start using docker, you system will soon look like this..."]]
+[[!img media/advanced-webservices-on-nixos-revisited2.jpg style="float: none" size=700x caption="when you start using docker, you system will soon look like this..."]]
 
 related to reverse-proxy setup:
 

@@ -1,5 +1,6 @@
 [[!meta date="2010-10-05 21:13"]]
 [[!tag qt usability visualization]]
+[[!series qgraphicsscene]]
 
 # motiviation
 [[!toc levels=2]]

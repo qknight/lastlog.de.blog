@@ -1,7 +1,7 @@
 [[!meta date="2015-11-11 23:38"]]
 [[!tag nixos nixcloud compiler yocto]]
 
-[[!img media/nixos-lores.png alt="" class="noFancy" align="right"]]
+[[!img media/nixos-lores.png alt="" class="noFancy" style="float: right"]]
 
 # motivation
 porting nixos to new architectures like 'powerpc64 big endian' just got easier using a cross compiler to build the 'bootstrap-tools'!

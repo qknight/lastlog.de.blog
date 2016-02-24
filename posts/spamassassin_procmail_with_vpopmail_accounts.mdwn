@@ -1,7 +1,7 @@
 [[!meta date="2010-06-28 09:30"]]
 [[!tag linux mail usability]]
 
-[[!img media/spamassassin-logo-320x136.png alt="copied from http://spamassassin.apache.org/logo" align=right]]
+[[!img media/spamassassin-logo-320x136.png alt="copied from http://spamassassin.apache.org/logo" style="float: right"]]
 
 
 # motivation

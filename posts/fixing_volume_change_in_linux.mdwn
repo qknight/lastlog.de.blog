@@ -1,7 +1,7 @@
 [[!meta date="2010-07-10 09:47"]]
 [[!tag audio gentoo linux usability]]
 
-[[!img media/img_0042.jpg alt="" align=right size=230x]]
+[[!img media/img_0042.jpg alt="" style="float: right" size=230x]]
 
 # motivation
 

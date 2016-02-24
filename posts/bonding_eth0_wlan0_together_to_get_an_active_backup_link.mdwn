@@ -1,6 +1,6 @@
 [[!meta date="2012-06-21 07:28"]]
 [[!tag linux nixos usability]]
-[[!img media/nixos-lores.png alt="" align=right]]
+[[!img media/nixos-lores.png alt="" style="float: right"]]
 
 #what is this?
 

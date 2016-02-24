@@ -1,8 +1,8 @@
 [[!meta date="2014-08-03 13:38"]]
 
-[[!img media/nixos-lores.png alt="" align=right]]
+[[!img media/nixos-lores.png alt="" style="float: right"]]
 
-[[!img media/nodejs.png alt="" size=150x align=right]]
+[[!img media/nodejs.png alt="" size=150x style="float: right"]]
 
 [[!tag nixos linux npm node.js]]
 
@@ -47,7 +47,7 @@ so what other advantages does it bring? more interesting:
 
 a typical node applicaton developer uses npm to handle the dependencies (**npm lists 80k node packaged modules** on jul 2014). exploringdata.github.io [4] has a excellent visualization of some of these. 
 
-[[!img media/nodejs-dependencies.jpeg caption="http://exploringdata.github.io/vis/npm-packages-dependencies" align=center]]
+[[!img media/nodejs-dependencies.jpeg caption="http://exploringdata.github.io/vis/npm-packages-dependencies" style="float: none"]]
 
 **even though npm could be used to deploy the whole application it is usually not AFAIK**. i didn't find any numbers about this but: 
 
@@ -321,7 +321,7 @@ summary: **node package modules sometimes depend on python, might compile binari
 
 a very nice tool to visualized dependencies interactively is colony [17] (i was using it on NixOS using nix-shell):
 
-[[!img media/nodejs-dependencies-of-etherpad-lite-using-colony.jpeg caption="etherpad lite dependencies visualized using colony (screenshot)" align=center]]
+[[!img media/nodejs-dependencies-of-etherpad-lite-using-colony.jpeg caption="etherpad lite dependencies visualized using colony (screenshot)" style="float: none"]]
 
 ## cyclic dependencies
 
@@ -332,7 +332,7 @@ node package module can be used in a cyclic way (see [6], package 'd'), in short
 * es6-iterator, 
 * es6-symbol
 
-[[!img media/nodejs-dependencies-es5-ext-using-colony.jpeg caption="es5-ext dependencies visualized using colony" align=center]]
+[[!img media/nodejs-dependencies-es5-ext-using-colony.jpeg caption="es5-ext dependencies visualized using colony" style="float: none"]]
 
 summary deploying cyclic dependencies: 
 
@@ -343,7 +343,7 @@ summary deploying cyclic dependencies:
 
 inspired by nodechecker [9] i digged into npm tests and was disappointed as most node package modules shipped via npmjs.org (read: via npm) are not including unit tests, when downloaded using npm. the only solution was to use **npm info express | grep git** and afterwards clone the git repo and run the tests from the clone.
 
-[[!img media/nodejs-dependencies-nodechecker.jpeg caption="nodechecker homepage" align=center]]
+[[!img media/nodejs-dependencies-nodechecker.jpeg caption="nodechecker homepage" style="float: none"]]
 
 interestingly they test about 71k npm(s):
 
@@ -398,7 +398,7 @@ currently npm2nix can be used for:
 
 so here is the steps i was (ab)using npm2nix for etherpad anyway:
 
-[[!img media/npm2nix-explained.jpg caption="npm2nix explained" size=700x align=center]]
+[[!img media/npm2nix-explained.jpg caption="npm2nix explained" size=700x style="float: none"]]
 
 if you want to use it to deploy etherpad lite, as i did, you have to make some hacks to make it work.
 
@@ -531,7 +531,7 @@ using shrinkwrap means that we have to update the ``npm-shrinkwrap.json`` indivi
 * add a ``top-level/node-shrinkwraps.nix`` where all the ``npm-shirinkwrap.json`` files are aggregated (similar to ``top-level/all-packages.nix``). generate ``node-packages-generated.nix`` from ``top-level/node-shrinkwraps.nix`` and commit it to **nixpkgs**
 * ``top-level/node-packages.json`` is not needed anymore, therefore remove it
 
-[[!img media/npm2nix-shrinkwrap.jpg caption="npm2nix workflow change" size=700x align=center]]
+[[!img media/npm2nix-shrinkwrap.jpg caption="npm2nix workflow change" size=700x style="float: none"]]
 
 **summary**: this is a much cleaner approach, compared to editing the ``node-packages.json`` as we used to, and by using shrinkwrap we also get reproducibility!
 

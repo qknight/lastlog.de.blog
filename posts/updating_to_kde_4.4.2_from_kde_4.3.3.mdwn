@@ -2,7 +2,7 @@
 [[!tag linux gentoo packagemanager usability]]
 
 
-[[!img media/200px-gentoo_linux_logo_matte-svg.png alt="" caption="gentoo linux logo (copied from commons.wikipedia.org)" align=right]]
+[[!img media/200px-gentoo_linux_logo_matte-svg.png alt="" caption="gentoo linux logo (copied from commons.wikipedia.org)" style="float: right"]]
 
 # motivation
 

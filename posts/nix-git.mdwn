@@ -1,7 +1,7 @@
 [[!meta date="2013-07-26 12:14"]]
 [[!tag nixos linux github]]
 
-[[!img media/nixos-lores.png align=right alt=""]]
+[[!img media/nixos-lores.png style="float: right" alt=""]]
 
 # motivation 
 

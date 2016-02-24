@@ -2,7 +2,7 @@
 [[!tag ]]
 [[!draft]]
 
-[[!img media/nixos-lores.png alt="" align=right]]
+[[!img media/nixos-lores.png alt="" style="float: right"]]
 
 # motivation
 der standort 'deutschland' für internetdienste könnte erheblich ausgebaut werden.

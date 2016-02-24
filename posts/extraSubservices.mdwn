@@ -3,7 +3,7 @@
 [[!draft]]
 
 
-[[!img media/nixos-lores.png alt="" align=right]]
+[[!img media/nixos-lores.png alt="" style="float: right"]]
 
 # motivation
 nixpkgs features a very handy apache abstraction and one can add all kind of services using so called ''extraSubservices''. in this posting i want to show how to use them and how to avoid pitfalls.

@@ -1,5 +1,5 @@
 [[!meta date="2009-10-26 11:29"]]
-[[!img media/t43-radeon.png alt="" align=right]]
+[[!img media/t43-radeon.png alt="" style="float: right"]]
 
 
 

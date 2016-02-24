@@ -1,7 +1,7 @@
 [[!meta date="2015-04-13 11:58"]]
 [[!tag gentoo nixos nix]]
 
-[[!img media/nixos-lores.png alt="" class="noFancy" align=right]]
+[[!img media/nixos-lores.png alt="" class="noFancy" style="float: right"]]
 
 # motivation
 gentoo linux has USE flags [1] and nixos has a very similar system. in this short posting i want to show how they are used on nixos. 

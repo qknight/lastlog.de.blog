@@ -1,5 +1,5 @@
 [[!meta date="2009-11-30 06:14"]]
-[[!img media/libnoise.png alt="" align=right]]
+[[!img media/libnoise.png alt="" style="float: right"]]
 [[!tag cmake gentoo linux society technology usability]]
 
 #motivation

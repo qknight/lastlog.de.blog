@@ -1,6 +1,6 @@
 [[!meta date="2011-02-16 14:01"]]
 [[!tag gentoo linux packagemanager security usability]]
-[[!img media/debian_ubuntu_gentoo_package.png size=180x alt="" align=right]]
+[[!img media/debian_ubuntu_gentoo_package.png size=180x alt="" style="float: right"]]
 
 # motivation
 

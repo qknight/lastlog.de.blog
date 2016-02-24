@@ -1,7 +1,7 @@
 [[!meta date="2010-03-27 13:24"]]
 [[!tag gentoo linux]]
 
-[[!img media/internet_systems_consortium.jpg size=400x align=right]]
+[[!img media/internet_systems_consortium.jpg size=400x style="float: right"]]
 
 # motivation
 

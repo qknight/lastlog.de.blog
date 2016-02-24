@@ -1,7 +1,7 @@
 [[!meta date="2010-03-31 04:18"]]
 [[!tag gentoo linux p2p technology usability]]
 
-[[!img media/200px-bittorrent_logo-svg.png alt="" align=right size=200x caption="BitTorrent logo, source: wikipedia"]]
+[[!img media/200px-bittorrent_logo-svg.png alt="" style="float: right" size=200x caption="BitTorrent logo, source: wikipedia"]]
 
 #motivation 
 

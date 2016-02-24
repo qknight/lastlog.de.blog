@@ -1,7 +1,7 @@
 [[!meta date="2015-04-13 03:58"]]
 [[!tag nixos FTL patchelf linux usability]]
 
-[[!img media/nixos-lores.png alt="" align=right caption=""]]
+[[!img media/nixos-lores.png alt="" style="float: right" caption=""]]
 
 # motivation
 this posting is about how to **get a binary only x86/amd64 game called FTL [1] on nixos**. the problem to solve is how to tell the game the proper library locations in the /nix/store!

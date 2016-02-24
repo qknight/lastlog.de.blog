@@ -1,7 +1,7 @@
 [[!meta date="2011-01-19 21:34"]]
 [[!tag linux packagemanager qt technology windows]]
 
-[[!img media/nixos-lores.png align=right]]
+[[!img media/nixos-lores.png style="float: right"]]
 
 # motivation
 

@@ -1,7 +1,7 @@
 [[!meta date="2015-01-18 10:58"]]
 [[!tag linux hardware usability]]
 
-[[!img media/ls-7t.jpg size=400x alt="" align=right caption="screenshot from pollin.de LS-7T article"]]
+[[!img media/ls-7t.jpg size=400x alt="" style="float: right" caption="screenshot from pollin.de LS-7T article"]]
 
 # motivation
 a few weeks ago i bought the 7" (17,78 cm) display set with touchscreen (LS-7T) from pollin.de and here is my experience with that device.  i don't want to make the product look bad because of my maybe-exotic requirements, anyway here is what i think about it.

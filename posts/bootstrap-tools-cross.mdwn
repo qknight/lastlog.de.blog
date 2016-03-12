@@ -18,26 +18,26 @@ but i wanted to point out that **getting all the perl aspects in nix installed c
 meta-oe/meta-perl/recipes-perl/wwwcurl/www-curl-perl_4.17.bb
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ { .bash }
-SUMMARY = “WWW::Curl - Perl extension interface for libcurl”
-SECTION = “libs”
-LICENSE = “Artistic-1.0 | GPL-1.0+”
+SUMMARY = "WWW::Curl - Perl extension interface for libcurl"
+SECTION = "libs"
+LICENSE = "Artistic-1.0 | GPL-1.0+"
 
-LIC_FILES_CHKSUM = “file://LICENSE;md5=a14040e6fa5b252da082d4dd0af3a542“
+LIC_FILES_CHKSUM = "file://LICENSE;md5=a14040e6fa5b252da082d4dd0af3a542"
 
-SRC_URI = “https://cpan.metacpan.org/authors/id/S/SZ/SZBALINT/WWW-Curl-${PV}.tar.gz”
-SRC_URI[md5sum] = “997ac81cd6b03b30b36f7cd930474845“
-SRC_URI[sha256sum] = “52ffab110e32348d775f241c973eb56f96b08eedbc110d77d257cdb0a24ab7ba”
+SRC_URI = "https://cpan.metacpan.org/authors/id/S/SZ/SZBALINT/WWW-Curl-${PV}.tar.gz"
+SRC_URI[md5sum] = "997ac81cd6b03b30b36f7cd930474845"
+SRC_URI[sha256sum] = "52ffab110e32348d775f241c973eb56f96b08eedbc110d77d257cdb0a24ab7ba"
 
-S = “${WORKDIR}/WWW-Curl-${PV}”
-EXTRA_CPANFLAGS = “EXPATLIBPATH=${STAGING_LIBDIR} EXPATINCPATH=${STAGING_INCDIR}”
-DEPENDS += “ curl curl-native”
-BBCLASSEXTEND="native”
+S = "${WORKDIR}/WWW-Curl-${PV}"
+EXTRA_CPANFLAGS = "EXPATLIBPATH=${STAGING_LIBDIR} EXPATINCPATH=${STAGING_INCDIR}"
+DEPENDS += " curl curl-native"
+BBCLASSEXTEND="native"
 
 inherit cpan
 
 do_configure_prepend() {
-    b="${STAGING_DIR_TARGET}/usr/include”
-    sed -i “s:/usr/local/include/curl:${b}:g” Makefile.PL
+    b="${STAGING_DIR_TARGET}/usr/include"
+    sed -i "s:/usr/local/include/curl:${b}:g" Makefile.PL
 }
 
 do_compile() {

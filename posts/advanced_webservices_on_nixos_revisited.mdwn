@@ -13,7 +13,7 @@ NixOS is all about containment. in NixOS practically every program is running in
 
 in this posting i want to share my thoughts about isolating webservices in the same way and discuss benefits/drawbacks of various approaches. it is also a **followup posting to [1]**. i've held a **talk about declarative webservices [2] at the easterhegg14** but since it was in german here is the english writeup.
 
-[[!img media/advanced-webservices-on-nixos-revisited.jpg style="float: none" size=700x caption="apache as reverse proxy using vhosts, see [7] to replicate this setup"]]
+[[!img media/advanced-webservices-on-nixos-revisited.jpg style="float: none" width="700px" caption="apache as reverse proxy using vhosts, see [7] to replicate this setup"]]
 
 # warning
 
@@ -71,300 +71,302 @@ how i think webservice composition should be approached:
 
 let's look at an excerpt from [7]:
 
-      1	# for debugging use:
-      2	#   journalctl status httpd.service
-      3	#   journalctl -b -u httpd
-      4	
-      5	# and do not forget to start the containers manually (even the declarative containers)
-      6	#
-      7	# once you did nixos-rebuild switch; 
-      8	# for i in `seq 1 5`; do nixos-container start web$i; done
-      9	# for i in `seq 1 5`; do mkdir -p /var/lib/containers/web$i/webroot/; done
-     10	# for i in `seq 1 5`; do echo "<?php phpinfo(); ?>" > /var/lib/containers/web$i/webroot/index.php; done
-     11	# for i in `seq 1 5`; do echo "hello world from web$i" > /var/lib/containers/web$i/webroot/index.html; done
-     12	
-     13	services.httpd = {
-     14	  enable = true;
-     15	  enableSSL = false;
-     16	  adminAddr = "web0@example.org";
-     17	  virtualHosts =
-     18	  [ 
-     19	    # webservice0 vhost
-     20	    # index.html works, browsing to index.php shows that php is not enabled
-     21	    { 
-     22	      serverAliases = ["webservice0"];
-     23	      documentRoot = "/webroot/";
-     24	      extraConfig = ''
-     25	        <Directory "/webroot/">
-     26	          Options -Indexes
-     27	          AllowOverride None
-     28	          Order allow,deny
-     29	          Allow from all
-     30	        </Directory>
-     31	
-     32	        <IfModule mod_dir.c>
-     33	        DirectoryIndex index.html
-     34	        </IfModule>
-     35	      '';
-     36	    }
-     37	    # webservice1 vhost
-     38	    { 
-     39	      hostName = "webservice1";
-     40	      serverAliases = ["webservice1"];
-     41	      extraConfig = ''
-     42	        # prevent a forward proxy! 
-     43	        ProxyRequests off
-     44	
-     45	        # User-Agent / browser identification is used from the original client
-     46	        ProxyVia Off
-     47	        ProxyPreserveHost On 
-     48	
-     49	        <Proxy *>
-     50	        Order deny,allow
-     51	        Allow from all
-     52	        </Proxy>
-     53	
-     54	        ProxyPass / http://192.168.101.11:80/
-     55	        ProxyPassReverse / http://192.168.101.11:80/
-     56	      '';
-     57	    }
-     58	    ## webservice2 vhost
-     59	    { 
-     60	      hostName = "webservice2";
-     61	      serverAliases = ["webservice2"];
-     62	      extraConfig = ''
-     63	        # prevent a forward proxy! 
-     64	        ProxyRequests off
-     65	
-     66	        # User-Agent / browser identification is used from the original client
-     67	        ProxyVia Off
-     68	        ProxyPreserveHost On 
-     69	
-     70	        <Proxy *>
-     71	        Order deny,allow
-     72	        Allow from all
-     73	        </Proxy>
-     74	
-     75	        ProxyPass / http://192.168.102.11:80/
-     76	        ProxyPassReverse / http://192.168.102.11:80/
-     77	      '';
-     78	    }
-     79	    # webservice3 vhost
-     80	    { 
-     81	      hostName = "webservice3";
-     82	      serverAliases = ["webservice3"];
-     83	      extraConfig = ''
-     84	        # prevent a forward proxy! 
-     85	        ProxyRequests off
-     86	
-     87	        # User-Agent / browser identification is used from the original client
-     88	        ProxyVia Off
-     89	        ProxyPreserveHost On 
-     90	
-     91	        <Proxy *>
-     92	        Order deny,allow
-     93	        Allow from all
-     94	        </Proxy>
-     95	
-     96	        ProxyPass / http://192.168.103.11:80/
-     97	        ProxyPassReverse / http://192.168.103.11:80/
-     98	      '';
-     99	    }
-    100	    # webservice4 vhost
-    101	    { 
-    102	      hostName = "webservice4";
-    103	      serverAliases = ["webservice4"];
-    104	      extraConfig = ''
-    105	        # prevent a forward proxy! 
-    106	        ProxyRequests off
-    107	
-    108	        # User-Agent / browser identification is used from the original client
-    109	        ProxyVia Off
-    110	        ProxyPreserveHost On 
-    111	
-    112	        <Proxy *>
-    113	        Order deny,allow
-    114	        Allow from all
-    115	        </Proxy>
-    116	
-    117	        ProxyPass / http://192.168.104.11:80/
-    118	        ProxyPassReverse / http://192.168.104.11:80/
-    119	      '';
-    120	    }
-    121	    # webservice5 vhost
-    122	    { 
-    123	      hostName = "webservice5";
-    124	      serverAliases = ["webservice5"];
-    125	      extraConfig = ''
-    126	        # prevent a forward proxy! 
-    127	        ProxyRequests off
-    128	
-    129	        # User-Agent / browser identification is used from the original client
-    130	        ProxyVia Off
-    131	        ProxyPreserveHost On 
-    132	
-    133	        <Proxy *>
-    134	        Order deny,allow
-    135	        Allow from all
-    136	        </Proxy>
-    137	
-    138	        ProxyPass / http://192.168.105.11:80/
-    139	        ProxyPassReverse / http://192.168.105.11:80/
-    140	      '';
-    141	    }
-    142	
-    143	  ];
-    144	};
-    145	
-    146	containers.web1 = {
-    147	  privateNetwork = true;
-    148	  hostAddress = "192.168.101.10";
-    149	  localAddress = "192.168.101.11";
-    150	  
-    151	  config = { config, pkgs, ... }: { 
-    152	    networking.firewall = {
-    153	      enable = true;
-    154	      allowedTCPPorts = [ 80 443 ];
-    155	    };
-    156	    services.httpd = {
-    157	      enable = true;
-    158	      enableSSL = false;
-    159	      adminAddr = "web1@example.org";
-    160	      documentRoot = "/webroot";
-    161	      # we override the php version for all uses of pkgs.php with this, 
-    162	      #  nix-env -qa --xml | grep php
-    163	      # lists available versions of php
-    164	      extraModules = [
-    165	        { name = "php5"; path = "${pkgs.php}/modules/libphp5.so"; }
-    166	      ];
-    167	    };
-    168	  };
-    169	};
-    170	
-    171	containers.web2 = {
-    172	  privateNetwork = true;
-    173	  hostAddress = "192.168.102.10";
-    174	  localAddress = "192.168.102.11";
-    175	  
-    176	  config = { config, pkgs, ... }: { 
-    177	    # two additional programs are installed in the environment
-    178	    environment.systemPackages = with pkgs; [
-    179	      wget
-    180	      nmap
-    181	    ];
-    182	    networking.firewall = {
-    183	      enable = true;
-    184	      allowedTCPPorts = [ 80 443 ];
-    185	    };
-    186	    services.httpd = {
-    187	      enable = true;
-    188	      enableSSL = false;
-    189	      adminAddr = "web2@example.org";
-    190	      documentRoot = "/webroot";
-    191	      extraModules = [
-    192	        # here we are using php-5.3.28 instead of php-5.4.23
-    193	        { name = "php5"; path = "${pkgs.php53}/modules/libphp5.so"; }
-    194	      ];
-    195	    };
-    196	  };
-    197	};
-    198	
-    199	# container with a mediawiki instance
-    200	containers.web3 = {
-    201	  privateNetwork = true;
-    202	  hostAddress = "192.168.103.10";
-    203	  localAddress = "192.168.103.11";
-    204	  
-    205	  config = { config, pkgs, ... }: { 
-    206	    networking.firewall = {
-    207	      enable = true;
-    208	      allowedTCPPorts = [ 80 443 ];
-    209	    };
-    210	    services.postgresql = {
-    211	      enable=true;
-    212	      package = pkgs.postgresql92;
-    213	      authentication = pkgs.lib.mkOverride 10 ''
-    214	        local mediawiki all ident map=mwusers
-    215	        local all all ident
-    216	      '';
-    217	      identMap = ''
-    218	        mwusers root   mediawiki
-    219	        mwusers wwwrun mediawiki
-    220	      '';
-    221	    };
-    222	    services.httpd = {
-    223	      enable = true;
-    224	      enableSSL = false;
-    225	      adminAddr = "web3@example.org";
-    226	      documentRoot = "/webroot";
-    227	
-    228	      virtualHosts =
-    229	      [ 
-    230	        {
-    231	          serverAliases = ["webservice3"];
-    232	
-    233	          extraConfig = ''
-    234	            RedirectMatch ^/$ /wiki
-    235	          '';
-    236	          extraSubservices =
-    237	          [
-    238	            {
-    239	              serviceType = "mediawiki";
-    240	              siteName = "webservice3";
-    241	            }
-    242	          ];
-    243	        }
-    244	      ];
-    245	    };
-    246	  };
-    247	};
-    248	
-    249	# lighttpd hello world example
-    250	containers.web4 = {
-    251	  privateNetwork = true;
-    252	  hostAddress = "192.168.104.10";
-    253	  localAddress = "192.168.104.11";
-    254	  config = { config, pkgs, ... }: { 
-    255	    networking.firewall = {
-    256	      enable = true;
-    257	      allowedTCPPorts = [ 80 443 ];
-    258	    };
-    259	    services.lighttpd = {
-    260	      enable = true;
-    261	      document-root = "/webroot";
-    262	    };
-    263	  };
-    264	};
-    265	
-    266	# nginx hello world example
-    267	containers.web5 = {
-    268	  privateNetwork = true;
-    269	  hostAddress = "192.168.105.10";
-    270	  localAddress = "192.168.105.11";
-    271	  config = { config, pkgs, ... }: { 
-    272	    networking.firewall = {
-    273	      enable = true;
-    274	      allowedTCPPorts = [ 80 443 ];
-    275	    };
-    276	    services.nginx = {
-    277	      enable = true;
-    278	      config = ''
-    279	        error_log  /webroot/error.log;
-    280	         
-    281	        events {}
-    282	         
-    283	        http {
-    284	          server {
-    285	            access_log /webroot/access.log;
-    286	            listen 80;
-    287	            root /webroot;
-    288	          }
-    289	        }
-    290	      '';
-    291	    };
-    292	  };
-    293	};
-    294	
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ {.bash .numberLines}
+# for debugging use:
+#   journalctl status httpd.service
+#   journalctl -b -u httpd
+
+# and do not forget to start the containers manually (even the declarative containers)
+#
+# once you did nixos-rebuild switch; 
+# for i in `seq 1 5`; do nixos-container start web$i; done
+# for i in `seq 1 5`; do mkdir -p /var/lib/containers/web$i/webroot/; done
+# for i in `seq 1 5`; do echo "<?php phpinfo(); ?>" > /var/lib/containers/web$i/webroot/index.php; done
+# for i in `seq 1 5`; do echo "hello world from web$i" > /var/lib/containers/web$i/webroot/index.html; done
+
+services.httpd = {
+  enable = true;
+  enableSSL = false;
+  adminAddr = "web0@example.org";
+  virtualHosts =
+  [ 
+    # webservice0 vhost
+    # index.html works, browsing to index.php shows that php is not enabled
+    { 
+      serverAliases = ["webservice0"];
+      documentRoot = "/webroot/";
+      extraConfig = ''
+        <Directory "/webroot/">
+          Options -Indexes
+          AllowOverride None
+          Order allow,deny
+          Allow from all
+        </Directory>
+
+        <IfModule mod_dir.c>
+        DirectoryIndex index.html
+        </IfModule>
+      '';
+    }
+    # webservice1 vhost
+    { 
+      hostName = "webservice1";
+      serverAliases = ["webservice1"];
+      extraConfig = ''
+        # prevent a forward proxy! 
+        ProxyRequests off
+
+        # User-Agent / browser identification is used from the original client
+        ProxyVia Off
+        ProxyPreserveHost On 
+
+        <Proxy *>
+        Order deny,allow
+        Allow from all
+        </Proxy>
+
+        ProxyPass / http://192.168.101.11:80/
+        ProxyPassReverse / http://192.168.101.11:80/
+      '';
+    }
+    ## webservice2 vhost
+    { 
+      hostName = "webservice2";
+      serverAliases = ["webservice2"];
+      extraConfig = ''
+        # prevent a forward proxy! 
+        ProxyRequests off
+
+        # User-Agent / browser identification is used from the original client
+        ProxyVia Off
+        ProxyPreserveHost On 
+
+        <Proxy *>
+        Order deny,allow
+        Allow from all
+        </Proxy>
+
+        ProxyPass / http://192.168.102.11:80/
+        ProxyPassReverse / http://192.168.102.11:80/
+      '';
+    }
+    # webservice3 vhost
+    { 
+      hostName = "webservice3";
+      serverAliases = ["webservice3"];
+      extraConfig = ''
+        # prevent a forward proxy! 
+        ProxyRequests off
+
+        # User-Agent / browser identification is used from the original client
+        ProxyVia Off
+        ProxyPreserveHost On 
+
+        <Proxy *>
+        Order deny,allow
+        Allow from all
+        </Proxy>
+
+        ProxyPass / http://192.168.103.11:80/
+        ProxyPassReverse / http://192.168.103.11:80/
+      '';
+    }
+    # webservice4 vhost
+    { 
+      hostName = "webservice4";
+      serverAliases = ["webservice4"];
+      extraConfig = ''
+        # prevent a forward proxy! 
+        ProxyRequests off
+
+        # User-Agent / browser identification is used from the original client
+        ProxyVia Off
+        ProxyPreserveHost On 
+
+        <Proxy *>
+        Order deny,allow
+        Allow from all
+        </Proxy>
+
+        ProxyPass / http://192.168.104.11:80/
+        ProxyPassReverse / http://192.168.104.11:80/
+      '';
+    }
+    # webservice5 vhost
+    { 
+      hostName = "webservice5";
+      serverAliases = ["webservice5"];
+      extraConfig = ''
+        # prevent a forward proxy! 
+        ProxyRequests off
+
+        # User-Agent / browser identification is used from the original client
+        ProxyVia Off
+        ProxyPreserveHost On 
+
+        <Proxy *>
+        Order deny,allow
+        Allow from all
+        </Proxy>
+
+        ProxyPass / http://192.168.105.11:80/
+        ProxyPassReverse / http://192.168.105.11:80/
+      '';
+    }
+
+  ];
+};
+
+containers.web1 = {
+  privateNetwork = true;
+  hostAddress = "192.168.101.10";
+  localAddress = "192.168.101.11";
+  
+  config = { config, pkgs, ... }: { 
+    networking.firewall = {
+      enable = true;
+      allowedTCPPorts = [ 80 443 ];
+    };
+    services.httpd = {
+      enable = true;
+      enableSSL = false;
+      adminAddr = "web1@example.org";
+      documentRoot = "/webroot";
+      # we override the php version for all uses of pkgs.php with this, 
+      #  nix-env -qa --xml | grep php
+      # lists available versions of php
+      extraModules = [
+        { name = "php5"; path = "${pkgs.php}/modules/libphp5.so"; }
+      ];
+    };
+  };
+};
+
+containers.web2 = {
+  privateNetwork = true;
+  hostAddress = "192.168.102.10";
+  localAddress = "192.168.102.11";
+  
+  config = { config, pkgs, ... }: { 
+    # two additional programs are installed in the environment
+    environment.systemPackages = with pkgs; [
+      wget
+      nmap
+    ];
+    networking.firewall = {
+      enable = true;
+      allowedTCPPorts = [ 80 443 ];
+    };
+    services.httpd = {
+      enable = true;
+      enableSSL = false;
+      adminAddr = "web2@example.org";
+      documentRoot = "/webroot";
+      extraModules = [
+        # here we are using php-5.3.28 instead of php-5.4.23
+        { name = "php5"; path = "${pkgs.php53}/modules/libphp5.so"; }
+      ];
+    };
+  };
+};
+
+# container with a mediawiki instance
+containers.web3 = {
+  privateNetwork = true;
+  hostAddress = "192.168.103.10";
+  localAddress = "192.168.103.11";
+  
+  config = { config, pkgs, ... }: { 
+    networking.firewall = {
+      enable = true;
+      allowedTCPPorts = [ 80 443 ];
+    };
+    services.postgresql = {
+      enable=true;
+      package = pkgs.postgresql92;
+      authentication = pkgs.lib.mkOverride 10 ''
+        local mediawiki all ident map=mwusers
+        local all all ident
+      '';
+      identMap = ''
+        mwusers root   mediawiki
+        mwusers wwwrun mediawiki
+      '';
+    };
+    services.httpd = {
+      enable = true;
+      enableSSL = false;
+      adminAddr = "web3@example.org";
+      documentRoot = "/webroot";
+
+      virtualHosts =
+      [ 
+        {
+          serverAliases = ["webservice3"];
+
+          extraConfig = ''
+            RedirectMatch ^/$ /wiki
+          '';
+          extraSubservices =
+          [
+            {
+              serviceType = "mediawiki";
+              siteName = "webservice3";
+            }
+          ];
+        }
+      ];
+    };
+  };
+};
+
+# lighttpd hello world example
+containers.web4 = {
+  privateNetwork = true;
+  hostAddress = "192.168.104.10";
+  localAddress = "192.168.104.11";
+  config = { config, pkgs, ... }: { 
+    networking.firewall = {
+      enable = true;
+      allowedTCPPorts = [ 80 443 ];
+    };
+    services.lighttpd = {
+      enable = true;
+      document-root = "/webroot";
+    };
+  };
+};
+
+# nginx hello world example
+containers.web5 = {
+  privateNetwork = true;
+  hostAddress = "192.168.105.10";
+  localAddress = "192.168.105.11";
+  config = { config, pkgs, ... }: { 
+    networking.firewall = {
+      enable = true;
+      allowedTCPPorts = [ 80 443 ];
+    };
+    services.nginx = {
+      enable = true;
+      config = ''
+        error_log  /webroot/error.log;
+         
+        events {}
+         
+        http {
+          server {
+            access_log /webroot/access.log;
+            listen 80;
+            root /webroot;
+          }
+        }
+      '';
+    };
+  };
+};
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 explanation:
 

@@ -1,7 +1,7 @@
 [[!meta date="2014-12-22 13:04"]]
 [[!tag linux usability]]
 
-# memtest86 fail
+# motivateion
 
 a few months ago i had to fix a computer and was using memtest86 from a ubuntu usb boot stick. the program always returned this error:
 

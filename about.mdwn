@@ -13,7 +13,7 @@ contact details:
 
 * email: <js@lastlog.de> (gpg key at end of page)
 * jabber: <josh@jabber.ccc.de>
-* mobile: <a href="tel:+01605767242">0160 7576 242</a>
+* mobile: <a href="tel:+01607576242">0160 7576 242</a>
   
 i'm a **freelancer** so if you have something interesting to offer, feel free to contact me.
 
@@ -24,11 +24,12 @@ i'm a **freelancer** so if you have something interesting to offer, feel free to
 * <https://github.com/qknight> - for personal projects
 * <https://github.com/nixcloud> - nixcloud related projects
 * <http://stackoverflow.com/users/4243981/invalidmagic> - profile on stackoverflow
+* <http://stackoverflow.com/users/5988848/nixcloud> - profile on stackoverflow (nixcloud)
 ## used technologies
 
 i've come a long way with blogging. i first started with wordpress, continued with ikiwiki and finally wrote my own 'static webpage generator' using [go](https://golang.org/) called pankat:
 
-* pankat
+* [pankat](https://github.com/nixcloud/pankat)
 
     * [go](https://golang.org/)
     * [pandoc](http://pandoc.org/)

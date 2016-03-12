@@ -1,7 +1,7 @@
 [[!meta date="2014-08-10 16:38"]]
 
-[[!img media/nixos-lores.png alt="" style="float: right"]]
-[[!img media/prosody.png size=220x alt="" style="float: right"]]
+[[!img media/nixos-lores.png alt="" style="float: right" class="noFancy"]]
+[[!img media/prosody.png width="220px" alt="" style="float: right" class="noFancy"]]
 
 [[!tag nixos lua packagemanager ubuntu usability gentoo]]
 

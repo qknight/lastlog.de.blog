@@ -1,7 +1,7 @@
 [[!meta date="2015-03-19 17:58"]]
 [[!tag backup python linux technology usability]]
 
-[[!img media/attic-backup.jpg size=200x alt="" style="float: right"]]
+[[!img media/attic-backup.jpg size=200x alt="" style="float: right" class="noFancy"]]
 
 # motivation
 i do mysql backups using mysqldump and then move this into rdiff-backup, rsnapshot or duplicity. 

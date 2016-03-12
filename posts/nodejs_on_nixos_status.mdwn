@@ -1,8 +1,8 @@
 [[!meta date="2014-08-03 13:38"]]
 
-[[!img media/nixos-lores.png alt="" style="float: right"]]
+[[!img media/nixos-lores.png alt="" style="float: right" class="noFancy"]]
 
-[[!img media/nodejs.png alt="" size=150x style="float: right"]]
+[[!img media/nodejs.png alt="" width="150px" style="float: right" class="noFancy"]]
 
 [[!tag nixos linux npm node.js]]
 

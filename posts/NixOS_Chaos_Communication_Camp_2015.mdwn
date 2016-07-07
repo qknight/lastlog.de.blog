@@ -1,7 +1,7 @@
 [[!meta date="2015-07-12 20:58"]]
 [[!tag nixos]]
 
-[[!img media/nixos-lores.png alt="" style="float: right"]]
+[[!img media/nixos-lores.png alt="" style="float: right" class="noFancy"]]
 
 # announcement
 i want to have **a major NixOS hacking/workshop event** [1] at the Chaos Communication Camp 2015.

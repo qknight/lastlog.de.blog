@@ -1,0 +1,10 @@
+[[!meta date="2016-03-04 22:15"]]
+[[!tag pankat go usability technology nixcloud webservice javascript]]
+[[!draft]]
+
+[[!summary pankat is a static blog/wiki generator with pandoc as backend and lots of javascript libraries and bootstrap.]]
+
+# motivation
+pankat 
+
+# conclusion

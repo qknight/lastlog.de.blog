@@ -64,60 +64,65 @@ warning, i might also use cookies (please see <https://en.wikipedia.org/wiki/HTT
 
 this key is for the address: <js@lastlog.de>
 
+0. i exported the key with this command
+
+        gpg2 --armor --export 6D8F75EE 
+
 1. copy the text from the blog below into a file, say **/tmp/js_add_lastlog.de.gpg**:
 
         -----BEGIN PGP PUBLIC KEY BLOCK-----
         Version: GnuPG v2
-        
-        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
-        8x2hPiadOys6WA==
-        =jf1/
+
+        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
+        oBF0HX9yzS49
+        =G4U2
         -----END PGP PUBLIC KEY BLOCK-----
+
 
 2. then import it using:
 

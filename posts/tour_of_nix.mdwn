@@ -54,14 +54,18 @@ nix-instantiate is a very good candidate among the various nix-tools. since emsc
     what had to be changed:
 
     - the **build-system** was dramatically changed to use:
-      - only builds nix-instantiate (all other targets removed)
-      - **static linking** for all libs (.a instead of .so)
-      - O3, -g0
+
+        - only builds nix-instantiate (all other targets removed)
+        - **static linking** for all libs (.a instead of .so)
+        - O3, -g0
+
     - source code changes: **libraries** were removed from nix-instantiate
-      - bzip2, curl, ssl, sqlite3, dl, z, m, crypto, gc
-      - removed sigaction(..) code
-      - libstore requirement from nix-instantiate was removed
-      - various other changes to make nix compile and work in a browser
+
+        - bzip2, curl, ssl, sqlite3, dl, z, m, crypto, gc
+        - removed sigaction(..) code
+        - libstore requirement from nix-instantiate was removed
+        - various other changes to make nix compile and work in a browser
+
     - **bundle (a bash script)** was added to src/nix-instantiate
 
     to test emscripten a simple 'hello world' example was created.

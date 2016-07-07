@@ -4,6 +4,8 @@
     margin-left: -10px; 
     margin-right: -10px; 
     background-color: #67AACC;
+    border-color: #67AACC;
+    border: 0px solid #67AACC;
 }
 
 .navbar-default .navbar-brand {

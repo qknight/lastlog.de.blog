@@ -12,7 +12,6 @@ lately we extended the famous [request tracker](https://en.wikipedia.org/wiki/Re
 # features
 
 
-
 * jQuery UI
 * drag'n'drop operations:
  

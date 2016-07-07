@@ -1,0 +1,326 @@
+[[!draft]]
+
+# motivation
+
+i've replaced the [odroid XU4](http://www.hardkernel.com/main/products/prdt_info.php?g_code=G143452239825) with an [APU 2c4 board](http://www.apu-board.de/produkte/apu2c4.html).
+
+## odroid xu4 problems
+
+* hardware: USB power supply is broken
+* software: USB 3.0 driver stack is untested/broken
+
+## apu 2c4
+
+[apu2 manual](http://www.apu-board.de/apu2.pdf)
+
+getting nixos to work
+
+1. serial cable
+
+    out of simplicity i soldered one myself, the pins are:
+
+        pin 2 to pin 3
+        pin 3 to pin 2
+        pin 5 to pin 5 (GND)
+
+    i've been using this with a USB 2 RS232 converter
+
+        # lsusb
+        Bus 003 Device 003: ID 067b:2303 Prolific Technology, Inc. PL2303 Serial Port
+
+2. connecting via serial console:
+
+        picocom /dev/ttyUSB0 -b 115200
+
+3. nixos boot cd
+
+    download the **nixos-minimal-16.03.714.69420c5-x86_64-linux.iso** and use **unetbootin** to deploy it to an USB stick. afterwards mount the first partition of the USB-stick and append this to the syslinux.cfg file's kernel command line:
+        
+        console=ttyS0,115200n8
+
+    note: afterwards you will see not only the GRUB output but also the kernel's output and get a shell
+
+4. booting from the USB stick
+
+     the **apu 2c4** features corebios and the process is straight forward, just hit **F10** and select the USB stick
+
+5. nixos installation
+
+    just follow the nixos manual on installations
+
+# /etc/nixos/hardware-configuration.nix
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ {.python}
+{ config, lib, pkgs, ... }:
+
+{
+  imports =
+    [ <nixpkgs/nixos/modules/installer/scan/not-detected.nix>
+    ];
+
+  boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "ehci_pci" "usb_storage" "sd_mod" "sdhci_pci" ];
+  boot.kernelModules = [ "kvm-amd" ];
+  boot.extraModulePackages = [ ];
+
+  fileSystems = [
+    {
+      device = "/dev/mapper/rootfs";
+      mountPoint = "/";
+      fsType = "ext4";
+      options = "noatime,nodiratime,discard";
+
+    }
+    {
+      device = "/dev/disk/by-uuid/26f7bfe1-d4bb-4f07-b07b-db051168f693";
+      mountPoint = "/boot";
+      fsType = "ext4";
+    }
+  ];
+
+  swapDevices = [ ];
+
+  boot.initrd.kernelModules = [ "usb_storage" ];
+
+  boot.initrd.luks.devices = [ {
+    name = "rootfs";
+    device = "/dev/disk/by-uuid/673d4e70-6a2c-4fb0-b5e8-320688d40da7";
+    keyFile = "/dev/disk/by-uuid/6396-052E";
+    keyFileSize = 4096;
+    allowDiscards = true;
+  }];
+
+  nix.maxJobs = lib.mkDefault 4;
+}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+# /etc/nixos/configuration.nix                                                     
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ {.python}
+# Edit this configuration file to define what should be installed on
+# your system.  Help is available in the configuration.nix(5) man page
+# and in the NixOS manual (accessible by running ‘nixos-help’).
+
+{ config, pkgs, ... }:
+
+{
+  imports =
+    [ # Include the results of the hardware scan.
+      ./hardware-configuration.nix
+    ];
+
+  # Use the GRUB 2 boot loader.
+  boot.loader.grub.enable = true;
+  boot.loader.grub.version = 2;
+  # Define on which hard drive you want to install Grub.
+  boot.loader.grub.device = "/dev/sda";
+
+  boot.kernelParams = [ "console=ttyS0,115200n8" ];
+
+  networking = {
+    hostName = "apu-nixi"; # Define your hostname.
+    firewall = {
+      enable = true;
+      allowPing = true;
+      allowedTCPPorts = [ 22 ];
+      #allowedUDPPorts = [ 5353 ];
+    };
+
+  };
+
+  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+
+  #Select internationalisation properties.
+  i18n = {
+    consoleFont = "Lat2-Terminus16";
+    consoleKeyMap = "us";
+    defaultLocale = "en_US.UTF-8";
+  };
+
+  security.sudo.enable = true;
+
+  programs.zsh.enable = true;
+  users.defaultUserShell = "/run/current-system/sw/bin/zsh";
+
+  services = {
+    nscd.enable = true;
+    ntp.enable = true;
+    klogd.enable = true;
+    nixosManual.enable = false;
+    xserver.enable = false;
+
+    #cron = {
+    #  enable = true;
+    #  mailto = "js@lastlog.de";
+    #  systemCronJobs = [
+    #    "0 0,8,16 * * * nixos cd /backup/; ./run_backup.sh"
+    #    #*     *     *   *    *            command to be executed
+    #    #-     -     -   -    -
+    #    #|     |     |   |    |
+    #    #|     |     |   |    +----- day of week (0 - 6) (Sunday=0)
+    #    #|     |     |   +------- month (1 - 12)
+    #    #|     |     +--------- day of month (1 - 31) 
+    #    #|     +----------- hour (0 - 23)
+    #    #+------------- min (0 - 59)
+    #  ]; 
+    #};  
+  };  
+
+  # List packages installed in system profile. To search by name, run:
+  environment.systemPackages = with pkgs; [
+    pciutils
+    openssl
+    ethtool
+    #borg
+    iotop
+    cryptsetup
+    parted
+    pv
+    tmux
+    htop
+    git
+    dfc
+    vim
+    wget
+    linuxPackages.cpupower
+    powertop
+    usbutils
+    ethtool
+    smartmontools
+    nix-repl
+    manpages
+    ntfs3g
+    lsof
+    iptraf
+    mc
+    hdparm
+    sdparm
+    file
+    dcfldd
+    dhex
+    inotifyTools
+    nmap
+    tcpdump
+    silver-searcher
+    #emacs
+  ];
+
+  time.timeZone = "Europe/Berlin";
+
+  # Enable the OpenSSH daemon.
+  services.openssh = {
+    enable = true;
+    permitRootLogin = "without-password";
+  };
+
+  hardware = {
+    enableAllFirmware = true;
+    pulseaudio = {
+      enable = true;
+    };
+  };
+
+  services.hostapd = {
+    enable = true;
+    
+  };
+
+  # Define a user account. Don't forget to set a password with ‘passwd’.
+  users.extraUsers.joachim = {
+    isNormalUser = true;
+    uid = 1000;
+  };
+
+  # The NixOS release to be compatible with for stateful data such as databases.
+  system.stateVersion = "16.03";
+
+}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ {.python}
+/dev/mapper/backup: UNEXPECTED INCONSISTENCY; RUN fsck MANUALLY.
+        (i.e., without -a or -p options)
+[4] root@apu-nixi> e2fsck /dev/mapper/backup                                                                   ~
+e2fsck 1.42.13 (17-May-2015)
+/dev/mapper/backup contains a file system with errors, check forced.
+Pass 1: Checking inodes, blocks, and sizes
+Pass 2: Checking directory structure
+Pass 3: Checking directory connectivity
+Pass 4: Checking reference counts
+Unattached inode 109448233
+Connect to /lost+found<y>? yes
+Inode 109448233 ref count is 65535, should be 1.  Fix<y>? yes
+Pass 5: Checking group summary information
+Block bitmap differences:  -(32767699--32767706) -(160479872--160479980) -(167714304--167714418) -(168209760--168209776) -(168209792--168209917) -(168665088--168666371) -(168667136--168668243)
+Fix<y>? yes
+Free blocks count wrong for group #999 (1598, counted=1606).
+Fix<y>? yes
+Free blocks count wrong for group #4897 (30092, counted=30201).
+Fix<y>? yes
+Free blocks count wrong for group #5118 (28557, counted=28672).
+Fix<y>? yes
+Free blocks count wrong for group #5133 (32625, counted=32768).
+Fix<y>? yes
+Free blocks count wrong for group #5147 (30376, counted=32768).
+Fix<y>? yes
+Free blocks count wrong (454469945, counted=454472712).
+Fix<y>? yes
+yyInode bitmap differences:  -18482351 -18482403 -18482416 -18482433 -18482435 -18482441yyyyyyy -18482474
+Fix<y>? yes
+Free inodes count wrong for group #2256 (6823, counted=6830).
+Fix<y>? yes
+Free inodes count wrong (120484555, counted=120484562).
+Fix<y>? yes
+y 
+
+/dev/mapper/backup: ***** FILE SYSTEM WAS MODIFIED *****
+/dev/mapper/backup: 1609006/122093568 files (0.2% non-contiguous), 33896952/488369664 blocks
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+https://www.coreboot.org/pipermail/seabios/2015-December/010176.html
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ {.python}
+SeaBIOS (version ?-20160311_005214-0c3a223c2ee6)
+XHCI init on dev 00:10.0: regs @ 0xfea22000, 4 ports, 32 slots, 32 byte contexts
+XHCI    extcap 0x1 @ fea22500
+XHCI    protocol USB  3.00, 2 ports (offset 1), def 0
+XHCI    protocol USB  2.00, 2 ports (offset 3), def 10
+XHCI    extcap 0xa @ fea22540
+Found 2 serial ports
+ATA controller 1 at 4010/4020/0 (irq 0 dev 88)
+EHCI init on dev 00:13.0 (regs=0xfea25420)
+ATA controller 2 at 4018/4024/0 (irq 0 dev 88)
+Searching bootorder for: /pci@i0cf8/*@14,7
+Searching bootorder for: /rom@img/memtest
+Searching bootorder for: /rom@img/setup
+ata0-0: KINGSTON SMS200S360G ATA-8 Hard-Disk (57241 MiBytes)
+Searching bootorder for: /pci@i0cf8/*@11/drive@0/disk@0
+XHCI port #3: 0x002202a0, powered, pls 5, speed 0 [ - ]
+XHCI port #1: 0x00021203, powered, enabled, pls 0, speed 4 [Super]
+Searching bootorder for: /pci@i0cf8/usb@10/storage@1/*@0/*@0,0
+Searching bootorder for: /pci@i0cf8/usb@10/usb-*@1
+USB MSC vendor='WD' product='My Passport 0827' rev='1012' type=0 removable=0
+call16 with invalid stack
+PCEngines apu2
+coreboot build 20160311
+4080 MB ECC DRAM
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+
+coreboot#irc.freenode.net tells me:
+
+* https://github.com/pcengines/apu2-documentation
+* https://github.com/pcengines/coreboot/
+* http://pcengines.ch/howto.htm#bios    -> brick -> http://pcengines.ch/spi1a.htm
+
+recover from a bad flash:
+(15:53) <   urjaman> i've only looked at APU1 in that detail, but anyways IIRC it was SPI, and there's a header, so like wires + a ch341a should do it
+

@@ -19,7 +19,6 @@ mount the ISO and copy:
 * efi.img 
 * bzImage 
 
-
 to the http-root
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ { .bash }

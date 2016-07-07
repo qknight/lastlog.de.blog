@@ -1,0 +1,19 @@
+[[!meta date="2016-07-04 03:15"]]
+[[!tag nixcloud nlnet xmlmirror emscripten llvm javascript]]
+
+[[!img media/nlnet-logo.gif class="noFancy" style="float: right"]]
+[[!summary about how to create a powerful xml editor using emscripten, libxml2 and codemirror.]]
+[[!draft]]
+# motivation
+
+[https://gitlab.com/odfplugfest/xmlmirror](xmlmirror)
+
+# concepts
+
+- codemirror error messages
+- webworkers
+- emscripten libxml2
+- emscripten toolchain in nixpkgs https://github.com/NixOS/nixpkgs/pull/16208
+- 
+
+

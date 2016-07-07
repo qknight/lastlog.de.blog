@@ -1,7 +1,7 @@
 [[!meta date="2015-06-21 20:58"]]
 [[!tag nixos ]]
 
-[[!img media/nixos-lores.png alt="" style="float: right"]]
+[[!img media/nixos-lores.png alt="" style="float: right" class="noFancy"]]
 
 # saleae logic analyzer
 just discovered an interesting hack for the logic analyzer [1] software worth sharing! this is about **tricking proprietary software**:
